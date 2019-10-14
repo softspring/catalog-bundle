@@ -1,0 +1,25 @@
+admin_products:
+    list:
+        page_title: "Models"
+        fields.name.header: "Product"
+
+    create:
+        form:
+            name.label: "Product"
+        actions:
+            create.button: "Create"
+
+admin_models:
+    list:
+        page_title: "Models"
+        fields.product.header: "Product"
+        fields.name.header: "Model"
+        fields.sku.header: "SKU"
+
+    create:
+        form:
+            product.label: "Product"
+            name.label: "Model"
+            sku.label: "SKU"
+        actions:
+            create.button: "Create"
