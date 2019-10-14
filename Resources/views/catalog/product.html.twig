@@ -1,0 +1,12 @@
+{% extends '@SfsCatalog/layout.html.twig' %}
+
+{% block content %}
+    <div class="card">
+        <h1>{{ product.name }}</h1>
+
+        {% for model in product.models %}
+            <a href="{{ url('sfs_catalog_model', {'model':model,'product':model.product}) }}">{{ model.sku }}</a>
+            <br/>
+        {% endfor %}
+    </div>
+{% endblock content %}

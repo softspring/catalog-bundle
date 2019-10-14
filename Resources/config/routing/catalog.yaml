@@ -1,0 +1,11 @@
+sfs_catalog_list:
+    controller: Softspring\CatalogBundle\Controller\CatalogController::list
+    path: /
+
+sfs_catalog_product:
+    controller: Softspring\CatalogBundle\Controller\CatalogController::product
+    path: /{product}
+
+sfs_catalog_model:
+    controller: Softspring\CatalogBundle\Controller\CatalogController::model
+    path: /{product}/{model}
