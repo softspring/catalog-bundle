@@ -5,3 +5,7 @@ sfs_catalog_admin_products_list:
 sfs_catalog_admin_products_create:
     controller: sfs_catalog.admin.product.controller::create
     path: /create
+
+sfs_catalog_admin_products_update:
+    controller: sfs_catalog.admin.product.controller::update
+    path: /{entity}/update

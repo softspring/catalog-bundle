@@ -5,3 +5,7 @@ sfs_catalog_admin_models_list:
 sfs_catalog_admin_models_create:
     controller: sfs_catalog.admin.model.controller::create
     path: /create
+
+sfs_catalog_admin_models_update:
+    controller: sfs_catalog.admin.model.controller::update
+    path: /{entity}/update

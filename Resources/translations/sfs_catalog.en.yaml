@@ -2,6 +2,7 @@ admin_products:
     list:
         page_title: "Models"
         fields.name.header: "Product"
+        actions.header: "Actions"
 
     create:
         form:
@@ -9,12 +10,19 @@ admin_products:
         actions:
             create.button: "Create"
 
+    update:
+        form:
+            name.label: "Product"
+        actions:
+            update.button: "Update"
+
 admin_models:
     list:
         page_title: "Models"
         fields.product.header: "Product"
         fields.name.header: "Model"
         fields.sku.header: "SKU"
+        actions.header: "Actions"
 
     create:
         form:
@@ -23,3 +31,11 @@ admin_models:
             sku.label: "SKU"
         actions:
             create.button: "Create"
+
+    update:
+        form:
+            product.label: "Product"
+            name.label: "Model"
+            sku.label: "SKU"
+        actions:
+            update.button: "Update"

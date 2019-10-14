@@ -5,5 +5,8 @@
         <td>{{ model.product.name }}</td>
         <td>{{ model.name }}</td>
         <td>{{ model.sku }}</td>
+        <td>
+            <a href="{{ url('sfs_catalog_admin_models_update', {'entity':model}) }}">update</a>
+        </td>
     </tr>
 {% endfor %}

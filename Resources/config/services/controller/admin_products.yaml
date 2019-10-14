@@ -10,7 +10,7 @@ services:
             $eventDispatcher: '@event_dispatcher'
             $listFilterForm: '@Softspring\CatalogBundle\Form\Admin\ProductListFilterFormInterface'
             $createForm: '@Softspring\CatalogBundle\Form\Admin\ProductCreateFormInterface'
-            $updateForm: null
+            $updateForm: '@Softspring\CatalogBundle\Form\Admin\ProductUpdateFormInterface'
             $deleteForm: null
             $config:
                 list:
@@ -25,3 +25,11 @@ services:
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_VIEW
                     success_redirect_to: 'sfs_catalog_admin_products_list'
                     view: '@@SfsCatalog/admin/product/create.html.twig'
+                update:
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_UPDATE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_UPDATE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_UPDATE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_UPDATE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_UPDATE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_products_list'
+                    view: '@@SfsCatalog/admin/product/update.html.twig'

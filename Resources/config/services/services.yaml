@@ -13,6 +13,10 @@ services:
     Softspring\CatalogBundle\Form\:
         resource: '../../../Form/*'
 
+    Softspring\CatalogBundle\Request\ParamConverter\:
+        resource: '../../../Request/ParamConverter/*'
+        tags: ['request.param_converter']
+
     Softspring\CatalogBundle\Manager\ModelManager: ~
     Softspring\CatalogBundle\Manager\ModelManagerInterface:
         alias: 'Softspring\CatalogBundle\Manager\ModelManager'
