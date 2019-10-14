@@ -1,0 +1,7 @@
+{% trans_default_domain 'sfs_catalog' %}
+
+{% for product in entities %}
+    <tr>
+        <td>{{ product.name }}</td>
+    </tr>
+{% endfor %}

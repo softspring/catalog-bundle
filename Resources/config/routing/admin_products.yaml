@@ -1,0 +1,7 @@
+sfs_catalog_admin_products_list:
+    controller: sfs_catalog.admin.product.controller::list
+    path: /
+
+sfs_catalog_admin_products_create:
+    controller: sfs_catalog.admin.product.controller::create
+    path: /create

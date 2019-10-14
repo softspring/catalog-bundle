@@ -1,0 +1,45 @@
+{% trans_default_domain 'sfs_catalog' %}
+{% extends '@SfsCatalog/admin_layout.html.twig' %}
+{% block title %}{{ 'admin_products.list.page_title'|trans }}{% endblock %}
+
+{% block content %}
+
+    <div class="text-right">
+        <a href="{{ url('sfs_catalog_admin_products_create') }}">Create product</a>
+    </div>
+
+
+    {{ form_start(filterForm) }}
+    {{ form_widget(filterForm) }}
+    {{ form_rest(filterForm) }}
+    {{ form_end(filterForm) }}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">{{ 'admin_products.list.fields.name.header'|trans }}</th>
+{#            <th>&nbsp;</th>#}
+        </tr>
+        </thead>
+
+        <tbody>
+        {% include '@SfsCatalog/admin/product/list-page.html.twig' %}
+        </tbody>
+
+        {% if entities.pages|default(false) %}
+            <tfoot>
+            <tr>
+                <td colspan="20">
+                    {% if entities.prevPage %}
+                        <a href="{{ url('sfs_catalog_admin_products_list', app.request.query.all|merge({ page: entities.prevPage })) }}">Prev page</a>
+                    {% endif %}
+
+                    {% if entities.nextPage %}
+                        <a class="float-right" href="{{ url('sfs_catalog_admin_products_list', app.request.query.all|merge({ page: entities.nextPage })) }}">Next page</a>
+                    {% endif %}
+                </td>
+            </tr>
+            </tfoot>
+        {% endif %}
+    </table>
+{% endblock content %}

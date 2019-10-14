@@ -1,0 +1,22 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $em: '@sfs_catalog.entity_manager'
+
+#    Softspring\CatalogBundle\Controller\:
+#        resource: '../../../Controller/*'
+#        public: true
+
+    Softspring\CatalogBundle\Form\:
+        resource: '../../../Form/*'
+
+    Softspring\CatalogBundle\Manager\ModelManager: ~
+    Softspring\CatalogBundle\Manager\ModelManagerInterface:
+        alias: 'Softspring\CatalogBundle\Manager\ModelManager'
+
+    Softspring\CatalogBundle\Manager\ProductManager: ~
+    Softspring\CatalogBundle\Manager\ProductManagerInterface:
+        alias: 'Softspring\CatalogBundle\Manager\ProductManager'

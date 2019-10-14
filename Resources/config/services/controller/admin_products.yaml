@@ -1,0 +1,27 @@
+services:
+    Softspring\CatalogBundle\Form\Admin\ProductListFilterFormInterface:
+        alias: 'Softspring\CatalogBundle\Form\Admin\ProductListFilterForm'
+
+    sfs_catalog.admin.product.controller:
+        class: Softspring\AdminBundle\Controller\EntityController
+        public: true
+        arguments:
+            $manager: '@Softspring\CatalogBundle\Manager\ProductManagerInterface'
+            $eventDispatcher: '@event_dispatcher'
+            $listFilterForm: '@Softspring\CatalogBundle\Form\Admin\ProductListFilterFormInterface'
+            $createForm: '@Softspring\CatalogBundle\Form\Admin\ProductCreateFormInterface'
+            $updateForm: null
+            $deleteForm: null
+            $config:
+                list:
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_LIST_VIEW
+                    view: '@@SfsCatalog/admin/product/list.html.twig'
+                    view_page: '@@SfsCatalog/admin/product/list-page.html.twig'
+                create:
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_products_list'
+                    view: '@@SfsCatalog/admin/product/create.html.twig'
