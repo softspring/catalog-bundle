@@ -7,5 +7,6 @@
         {{ form_widget(form) }}
         {{ form_rest(form) }}
         <input type="submit" value="{{ 'admin_models.update.actions.update.button'|trans }}" class="btn btn-primary btn-block" />
+        <a href="{{ url('sfs_catalog_admin_models_list') }}" class="btn btn-secondary btn-block">{{ 'admin_models.update.actions.cancel.button'|trans }}</a>
     {{ form_end(form) }}
 {% endblock content %}

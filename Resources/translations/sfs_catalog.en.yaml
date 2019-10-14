@@ -5,16 +5,20 @@ admin_products:
         actions.header: "Actions"
 
     create:
+        page_title: "New product"
         form:
             name.label: "Product"
         actions:
             create.button: "Create"
+            cancel.button: "Cancel"
 
     update:
+        page_title: "Edit product"
         form:
             name.label: "Product"
         actions:
             update.button: "Update"
+            cancel.button: "Cancel"
 
 admin_models:
     list:
@@ -25,17 +29,21 @@ admin_models:
         actions.header: "Actions"
 
     create:
+        page_title: "New model"
         form:
             product.label: "Product"
             name.label: "Model"
             sku.label: "SKU"
         actions:
             create.button: "Create"
+            cancel.button: "Cancel"
 
     update:
+        page_title: "Edit product"
         form:
             product.label: "Product"
             name.label: "Model"
             sku.label: "SKU"
         actions:
             update.button: "Update"
+            cancel.button: "Cancel"
