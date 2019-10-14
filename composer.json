@@ -6,6 +6,10 @@
     "require": {
         "php": "^7.2"
     },
+    "suggest": {
+        "softspring/admin-bundle": "Use softspring admin templates",
+        "softspring/core-bundle": "Use softspring core bundle"
+    },
     "autoload": {
         "psr-4": {
             "Softspring\\CatalogBundle\\": ""
