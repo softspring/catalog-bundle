@@ -19,6 +19,13 @@ admin_products:
         actions:
             update.button: "Update"
             cancel.button: "Cancel"
+            delete.button: "Delete"
+
+    delete:
+        page_title: "Delete product"
+        actions:
+            delete.button: "Delete"
+            cancel.button: "Cancel"
 
 admin_models:
     list:
@@ -46,4 +53,11 @@ admin_models:
             sku.label: "SKU"
         actions:
             update.button: "Update"
+            cancel.button: "Cancel"
+            delete.button: "Delete"
+
+    delete:
+        page_title: "Delete product"
+        actions:
+            delete.button: "Delete"
             cancel.button: "Cancel"

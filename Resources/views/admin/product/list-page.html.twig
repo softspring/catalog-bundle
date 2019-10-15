@@ -2,7 +2,10 @@
 
 {% for product in entities %}
     <tr>
-        <td>{{ product.name }}</td>
+        <td>
+            <a href="{{ url('sfs_catalog_admin_products_read', {'entity':product}) }}">{{ product.name }}</a>
+        </td>
+
         <td>
             <a href="{{ url('sfs_catalog_admin_products_update', {'entity':product}) }}">update</a>
         </td>

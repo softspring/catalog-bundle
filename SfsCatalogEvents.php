@@ -35,6 +35,11 @@ class SfsCatalogEvents
     const ADMIN_PRODUCTS_CREATE_VIEW = 'sfs_catalog.admin.products.create_view';
 
     /**
+     * @Event("Softspring\AdminBundle\Event\ViewEvent")
+     */
+    const ADMIN_PRODUCTS_READ_VIEW = 'sfs_catalog.admin.products.read_view';
+
+    /**
      * @Event("Softspring\AdminBundle\Event\GetResponseEntityEvent")
      */
     const ADMIN_PRODUCTS_UPDATE_INITIALIZE = 'sfs_catalog.admin.products.update_initialize';
@@ -58,6 +63,31 @@ class SfsCatalogEvents
      * @Event("Softspring\AdminBundle\Event\ViewEvent")
      */
     const ADMIN_PRODUCTS_UPDATE_VIEW = 'sfs_catalog.admin.products.update_view';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_PRODUCTS_DELETE_INITIALIZE = 'sfs_catalog.admin.products.delete_initialize';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_PRODUCTS_DELETE_FORM_VALID = 'sfs_catalog.admin.products.delete_form_valid';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_PRODUCTS_DELETE_SUCCESS = 'sfs_catalog.admin.products.delete_success';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_PRODUCTS_DELETE_FORM_INVALID = 'sfs_catalog.admin.products.delete_form_invalid';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\ViewEvent")
+     */
+    const ADMIN_PRODUCTS_DELETE_VIEW = 'sfs_catalog.admin.products.delete_view';
 
     /**
      * @Event("Softspring\AdminBundle\Event\ViewEvent")
@@ -90,6 +120,11 @@ class SfsCatalogEvents
     const ADMIN_MODELS_CREATE_VIEW = 'sfs_catalog.admin.models.create_view';
 
     /**
+     * @Event("Softspring\AdminBundle\Event\ViewEvent")
+     */
+    const ADMIN_MODELS_READ_VIEW = 'sfs_catalog.admin.models.read_view';
+
+    /**
      * @Event("Softspring\AdminBundle\Event\GetResponseEntityEvent")
      */
     const ADMIN_MODELS_UPDATE_INITIALIZE = 'sfs_catalog.admin.models.update_initialize';
@@ -113,4 +148,29 @@ class SfsCatalogEvents
      * @Event("Softspring\AdminBundle\Event\ViewEvent")
      */
     const ADMIN_MODELS_UPDATE_VIEW = 'sfs_catalog.admin.models.update_view';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_MODELS_DELETE_INITIALIZE = 'sfs_catalog.admin.models.delete_initialize';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_MODELS_DELETE_FORM_VALID = 'sfs_catalog.admin.models.delete_form_valid';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_MODELS_DELETE_SUCCESS = 'sfs_catalog.admin.models.delete_success';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_MODELS_DELETE_FORM_INVALID = 'sfs_catalog.admin.models.delete_form_invalid';
+
+    /**
+     * @Event("Softspring\AdminBundle\Event\ViewEvent")
+     */
+    const ADMIN_MODELS_DELETE_VIEW = 'sfs_catalog.admin.models.delete_view';
 }

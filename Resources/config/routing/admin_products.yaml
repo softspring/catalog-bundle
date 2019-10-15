@@ -9,3 +9,11 @@ sfs_catalog_admin_products_create:
 sfs_catalog_admin_products_update:
     controller: sfs_catalog.admin.product.controller::update
     path: /{entity}/update
+
+sfs_catalog_admin_products_delete:
+    controller: sfs_catalog.admin.product.controller::delete
+    path: /{entity}/delete
+
+sfs_catalog_admin_products_read:
+    controller: sfs_catalog.admin.product.controller::read
+    path: /{entity}

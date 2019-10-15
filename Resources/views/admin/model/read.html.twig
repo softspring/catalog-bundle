@@ -1,0 +1,7 @@
+{% trans_default_domain 'sfs_catalog' %}
+{% extends '@SfsCatalog/admin_layout.html.twig' %}
+{% block title %}{{ 'admin_models.read.page_title'|trans }}{% endblock %}
+
+{% block content %}
+    <h1>{{ entity.name }}</h1>
+{% endblock content %}

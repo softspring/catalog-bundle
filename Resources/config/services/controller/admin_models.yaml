@@ -11,7 +11,7 @@ services:
             $listFilterForm: '@Softspring\CatalogBundle\Form\Admin\ModelListFilterFormInterface'
             $createForm: '@Softspring\CatalogBundle\Form\Admin\ModelCreateFormInterface'
             $updateForm: '@Softspring\CatalogBundle\Form\Admin\ModelUpdateFormInterface'
-            $deleteForm: null
+            $deleteForm: '@Softspring\CatalogBundle\Form\Admin\ModelDeleteFormInterface'
             $config:
                 list:
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_LIST_VIEW
@@ -26,6 +26,7 @@ services:
                     success_redirect_to: 'sfs_catalog_admin_models_list'
                     view: '@@SfsCatalog/admin/model/create.html.twig'
                 update:
+                    param_converter_key: 'id'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_UPDATE_INITIALIZE
                     form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_UPDATE_FORM_VALID
                     success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_UPDATE_SUCCESS
@@ -33,3 +34,16 @@ services:
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_UPDATE_VIEW
                     success_redirect_to: 'sfs_catalog_admin_models_list'
                     view: '@@SfsCatalog/admin/model/update.html.twig'
+                delete:
+                    param_converter_key: 'id'
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_DELETE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_DELETE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_DELETE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_DELETE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_DELETE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_models_list'
+                    view: '@@SfsCatalog/admin/model/delete.html.twig'
+                read:
+                    param_converter_key: 'id'
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_READ_VIEW
+                    view: '@@SfsCatalog/admin/model/read.html.twig'

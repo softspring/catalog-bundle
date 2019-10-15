@@ -4,5 +4,9 @@
     <div class="card">
         <h1>{{ model.product.name }} / {{ model.name }}</h1>
         {{ model.sku }}
+
+        {% if add_to_cart %}
+            {{ url('sfs_shop_cart_add')|default(false) }}
+        {% endif %}
     </div>
 {% endblock content %}
