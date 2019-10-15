@@ -2,7 +2,7 @@
 
 namespace Softspring\CatalogBundle\Model;
 
-class Model implements ModelInterface
+abstract class Model implements ModelInterface
 {
     /**
      * @var ProductInterface|null

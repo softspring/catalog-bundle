@@ -5,7 +5,7 @@ namespace Softspring\CatalogBundle\Model;
 /**
  * Class Product
  */
-class Product implements ProductInterface
+abstract class Product implements ProductInterface
 {
     /**
      * @var string|null
