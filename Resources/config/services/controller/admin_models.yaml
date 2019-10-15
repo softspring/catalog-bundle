@@ -1,7 +1,4 @@
 services:
-    Softspring\CatalogBundle\Form\Admin\ModelListFilterFormInterface:
-        alias: 'Softspring\CatalogBundle\Form\Admin\ModelListFilterForm'
-
     sfs_catalog.admin.model.controller:
         class: Softspring\AdminBundle\Controller\EntityController
         public: true
