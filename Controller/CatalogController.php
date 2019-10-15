@@ -7,6 +7,7 @@ use Softspring\CatalogBundle\Manager\ProductManagerInterface;
 use Softspring\CatalogBundle\Model\ModelInterface;
 use Softspring\CatalogBundle\Model\ProductInterface;
 use Softspring\ExtraBundle\Controller\AbstractController;
+use Softspring\ShopBundle\Model\SalableInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -54,34 +55,47 @@ class CatalogController extends AbstractController
     }
 
     /**
-     * @param ProductInterface $product
-     * @param Request          $request
+     * @param ProductInterface|null $product
+     * @param Request               $request
      *
      * @return Response
      */
-    public function product(ProductInterface $product, Request $request): Response
+    public function product(?ProductInterface $product, Request $request): Response
     {
+        if (!$product instanceof ProductInterface) {
+            throw $this->createNotFoundException('Product not found');
+        }
+
         // show view
         $viewData = new \ArrayObject([
             'product' => $product,
+            'can_product_added_to_cart' => $product instanceof SalableInterface
         ]);
 
         return $this->render('@SfsCatalog/catalog/product.html.twig', $viewData->getArrayCopy());
     }
 
     /**
-     * @param ProductInterface $product
-     * @param ModelInterface   $model
-     * @param Request          $request
+     * @param ProductInterface|null $product
+     * @param ModelInterface|null   $model
+     * @param Request               $request
      *
      * @return Response
      */
-    public function model(ProductInterface $product, ModelInterface $model, Request $request): Response
+    public function model(?ProductInterface $product, ?ModelInterface $model, Request $request): Response
     {
+        if (!$product instanceof ProductInterface) {
+            throw $this->createNotFoundException('Product not found');
+        }
+        if (!$model instanceof ModelInterface) {
+            throw $this->createNotFoundException('Model not found');
+        }
+
         // show view
         $viewData = new \ArrayObject([
             'product' => $product,
             'model' => $model,
+            'can_model_added_to_cart' => $model instanceof SalableInterface
         ]);
 
         return $this->render('@SfsCatalog/catalog/model.html.twig', $viewData->getArrayCopy());

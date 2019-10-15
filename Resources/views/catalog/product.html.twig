@@ -8,5 +8,9 @@
             <a href="{{ url('sfs_catalog_model', {'model':model,'product':model.product}) }}">{{ model.sku }}</a>
             <br/>
         {% endfor %}
+
+        {% if can_product_added_to_cart|default(false) %}
+            <a href="{{ url('sfs_shop_cart_add', {'item':product}) }}">add to cart</a>
+        {% endif %}
     </div>
 {% endblock content %}

@@ -5,8 +5,8 @@
         <h1>{{ model.product.name }} / {{ model.name }}</h1>
         {{ model.sku }}
 
-        {% if add_to_cart %}
-            {{ url('sfs_shop_cart_add')|default(false) }}
+        {% if can_model_added_to_cart|default(false) %}
+            <a href="{{ url('sfs_shop_cart_add', {'item':model}) }}">add to cart</a>
         {% endif %}
     </div>
 {% endblock content %}
