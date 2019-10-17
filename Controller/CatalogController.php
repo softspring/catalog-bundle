@@ -7,7 +7,7 @@ use Softspring\CatalogBundle\Manager\ProductManagerInterface;
 use Softspring\CatalogBundle\Model\ModelInterface;
 use Softspring\CatalogBundle\Model\ProductInterface;
 use Softspring\ExtraBundle\Controller\AbstractController;
-use Softspring\ShopBundle\Model\SalableInterface;
+use Softspring\ShopBundle\Model\SalableItemInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -69,7 +69,7 @@ class CatalogController extends AbstractController
         // show view
         $viewData = new \ArrayObject([
             'product' => $product,
-            'can_product_added_to_cart' => $product instanceof SalableInterface
+            'can_product_added_to_cart' => $product instanceof SalableItemInterface
         ]);
 
         return $this->render('@SfsCatalog/catalog/product.html.twig', $viewData->getArrayCopy());
@@ -95,7 +95,7 @@ class CatalogController extends AbstractController
         $viewData = new \ArrayObject([
             'product' => $product,
             'model' => $model,
-            'can_model_added_to_cart' => $model instanceof SalableInterface
+            'can_model_added_to_cart' => $model instanceof SalableItemInterface
         ]);
 
         return $this->render('@SfsCatalog/catalog/model.html.twig', $viewData->getArrayCopy());
