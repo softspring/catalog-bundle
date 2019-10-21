@@ -13,14 +13,13 @@ services:
     Softspring\CatalogBundle\Form\:
         resource: '../../../Form/*'
 
+    Softspring\CatalogBundle\Manager\:
+        resource: '../../../Manager/*'
+
     Softspring\CatalogBundle\Request\ParamConverter\:
         resource: '../../../Request/ParamConverter/*'
         tags: ['request.param_converter']
 
-    Softspring\CatalogBundle\Manager\ModelManager: ~
-    Softspring\CatalogBundle\Manager\ModelManagerInterface:
-        alias: 'Softspring\CatalogBundle\Manager\ModelManager'
-
-    Softspring\CatalogBundle\Manager\ProductManager: ~
-    Softspring\CatalogBundle\Manager\ProductManagerInterface:
-        alias: 'Softspring\CatalogBundle\Manager\ProductManager'
+    Softspring\CatalogBundle\Twig\Extension\:
+        resource: '../../../Twig/Extension/*'
+        tags: ['twig.extension']

@@ -27,11 +27,15 @@ class SfsCatalogExtension extends Extension implements PrependExtensionInterface
         // configure model classes
         $container->setParameter('sfs_catalog.product.class', $config['product']['class']);
         $container->setParameter('sfs_catalog.model.class', $config['model']['class'] ?? null);
+        $container->setParameter('sfs_catalog.category.class', $config['category']['class'] ?? null);
 
         // load services
         $loader->load('services.yaml');
         if ($config['model']['class'] ?? false) {
             $loader->load('controller/admin_models.yaml');
+        }
+        if ($config['category']['class'] ?? false) {
+            $loader->load('controller/admin_categories.yaml');
         }
         $loader->load('controller/admin_products.yaml');
     }

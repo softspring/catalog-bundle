@@ -6,6 +6,10 @@
             <a href="{{ url('sfs_catalog_admin_products_read', {'entity':product}) }}">{{ product.name }}</a>
         </td>
 
+        {% if sfs_catalog_product_has_categories() %}
+            <td>{{ product.category.name|default('') }}</td>
+        {% endif %}
+
         <td>
             <a href="{{ url('sfs_catalog_admin_products_update', {'entity':product}) }}">update</a>
         </td>

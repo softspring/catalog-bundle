@@ -1,0 +1,19 @@
+{% trans_default_domain 'sfs_catalog' %}
+
+{% for category in entities %}
+    <tr>
+        <td>
+            <a href="{{ url('sfs_catalog_admin_categories_read', {'entity':category}) }}">{{ category.name }}</a>
+        </td>
+
+        {% if sfs_catalog_has_subcategories() %}
+            <td>
+                {{ category.parent.name|default('') }}
+            </td>
+        {% endif %}
+
+        <td>
+            <a href="{{ url('sfs_catalog_admin_categories_update', {'entity':category}) }}">update</a>
+        </td>
+    </tr>
+{% endfor %}

@@ -2,6 +2,7 @@ admin_products:
     list:
         page_title: "Models"
         fields.name.header: "Product"
+        fields.category.header: "Category"
         actions.header: "Actions"
 
     create:
@@ -58,6 +59,36 @@ admin_models:
 
     delete:
         page_title: "Delete product"
+        actions:
+            delete.button: "Delete"
+            cancel.button: "Cancel"
+
+admin_categories:
+    list:
+        page_title: "Categories"
+        fields.name.header: "Category"
+        fields.parent.header: "Parent"
+        actions.header: "Actions"
+
+    create:
+        page_title: "New category"
+        form:
+            name.label: "Category"
+        actions:
+            create.button: "Create"
+            cancel.button: "Cancel"
+
+    update:
+        page_title: "Edit category"
+        form:
+            name.label: "Model"
+        actions:
+            update.button: "Update"
+            cancel.button: "Cancel"
+            delete.button: "Delete"
+
+    delete:
+        page_title: "Delete category"
         actions:
             delete.button: "Delete"
             cancel.button: "Cancel"

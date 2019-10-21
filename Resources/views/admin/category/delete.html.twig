@@ -1,0 +1,12 @@
+{% trans_default_domain 'sfs_catalog' %}
+{% extends '@SfsCatalog/admin_layout.html.twig' %}
+{% block title %}{{ 'admin_categories.delete.page_title'|trans }}{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_rest(form) }}
+        <input type="submit" value="{{ 'admin_categories.delete.actions.delete.button'|trans }}" class="btn btn-danger btn-block" />
+        <a href="{{ url('sfs_catalog_admin_categories_list') }}" class="btn btn-secondary btn-block">{{ 'admin_categories.delete.actions.cancel.button'|trans }}</a>
+    {{ form_end(form) }}
+{% endblock content %}

@@ -18,6 +18,7 @@
         <thead>
         <tr>
             <th scope="col">{{ 'admin_products.list.fields.name.header'|trans }}</th>
+            {% if sfs_catalog_product_has_categories() %}<th scope="col">{{ 'admin_products.list.fields.category.header'|trans }}</th>{% endif %}
             <th scope="col">{{ 'admin_products.list.actions.header'|trans }}</th>
 {#            <th>&nbsp;</th>#}
         </tr>

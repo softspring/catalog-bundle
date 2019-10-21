@@ -1,0 +1,48 @@
+services:
+    sfs_catalog.admin.category.controller:
+        class: Softspring\AdminBundle\Controller\EntityController
+        public: true
+        calls:
+            - { method: setContainer, arguments: ['@service_container'] }
+        arguments:
+            $manager: '@Softspring\CatalogBundle\Manager\CategoryManagerInterface'
+            $eventDispatcher: '@event_dispatcher'
+            $listFilterForm: '@Softspring\CatalogBundle\Form\Admin\CategoryListFilterFormInterface'
+            $createForm: '@Softspring\CatalogBundle\Form\Admin\CategoryCreateFormInterface'
+            $updateForm: '@Softspring\CatalogBundle\Form\Admin\CategoryUpdateFormInterface'
+            $deleteForm: '@Softspring\CatalogBundle\Form\Admin\CategoryDeleteFormInterface'
+            $config:
+                list:
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_LIST_VIEW
+                    view: '@@SfsCatalog/admin/category/list.html.twig'
+                    view_page: '@@SfsCatalog/admin/category/list-page.html.twig'
+                create:
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_CREATE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_CREATE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_CREATE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_CREATE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_CREATE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_categories_list'
+                    view: '@@SfsCatalog/admin/category/create.html.twig'
+                update:
+                    param_converter_key: 'id'
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_UPDATE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_UPDATE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_UPDATE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_UPDATE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_UPDATE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_categories_list'
+                    view: '@@SfsCatalog/admin/category/update.html.twig'
+                delete:
+                    param_converter_key: 'id'
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_DELETE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_DELETE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_DELETE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_DELETE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_DELETE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_categories_list'
+                    view: '@@SfsCatalog/admin/category/delete.html.twig'
+                read:
+                    param_converter_key: 'id'
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_READ_VIEW
+                    view: '@@SfsCatalog/admin/category/read.html.twig'

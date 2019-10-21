@@ -1,0 +1,19 @@
+sfs_catalog_admin_categories_list:
+    controller: sfs_catalog.admin.category.controller::list
+    path: /
+
+sfs_catalog_admin_categories_create:
+    controller: sfs_catalog.admin.category.controller::create
+    path: /create
+
+sfs_catalog_admin_categories_update:
+    controller: sfs_catalog.admin.category.controller::update
+    path: /{entity}/update
+
+sfs_catalog_admin_categories_delete:
+    controller: sfs_catalog.admin.category.controller::delete
+    path: /{entity}/delete
+
+sfs_catalog_admin_categories_read:
+    controller: sfs_catalog.admin.category.controller::read
+    path: /{entity}
