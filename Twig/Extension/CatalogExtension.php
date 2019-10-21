@@ -84,6 +84,10 @@ class CatalogExtension extends AbstractExtension
      */
     public function getCategories()
     {
+        if (!$this->supportsCategories()) {
+            return [];
+        }
+
         return $this->categoryManager->getRepository()->findBy([]);
     }
 }

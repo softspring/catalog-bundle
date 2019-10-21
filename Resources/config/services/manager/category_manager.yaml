@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $em: '@sfs_catalog.entity_manager'
+
+    Softspring\CatalogBundle\Manager\CategoryManager: ~
+    Softspring\CatalogBundle\Manager\CategoryManagerInterface:
+        alias: 'Softspring\CatalogBundle\Manager\CategoryManager'
+
+

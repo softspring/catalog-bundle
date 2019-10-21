@@ -31,13 +31,19 @@ class SfsCatalogExtension extends Extension implements PrependExtensionInterface
 
         // load services
         $loader->load('services.yaml');
+
+        $loader->load('manager/product_manager.yaml');
+        $loader->load('controller/admin_products.yaml');
+
         if ($config['model']['class'] ?? false) {
+            $loader->load('manager/model_manager.yaml');
             $loader->load('controller/admin_models.yaml');
         }
+
         if ($config['category']['class'] ?? false) {
+            $loader->load('manager/category_manager.yaml');
             $loader->load('controller/admin_categories.yaml');
         }
-        $loader->load('controller/admin_products.yaml');
     }
 
     public function prepend(ContainerBuilder $container)
