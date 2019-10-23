@@ -4,7 +4,7 @@ namespace Softspring\CatalogBundle\Entity;
 
 use Softspring\CatalogBundle\Model\CategoryInterface;
 
-trait ProductHasCategory
+trait CategoryAwareTrait
 {
     /**
      * @var CategoryInterface|null
