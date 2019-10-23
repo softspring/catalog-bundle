@@ -4,10 +4,13 @@ namespace Softspring\CatalogBundle\Manager;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
+use Softspring\AdminBundle\Manager\AdminEntityManagerTrait;
 use Softspring\CatalogBundle\Model\ModelInterface;
 
 class ModelManager implements ModelManagerInterface
 {
+    use AdminEntityManagerTrait;
+
     /**
      * @var EntityManagerInterface
      */
@@ -22,30 +25,8 @@ class ModelManager implements ModelManagerInterface
         $this->em = $em;
     }
 
-    public function getClass(): string
+    public function getTargetClass(): string
     {
         return ModelInterface::class;
-    }
-
-    public function getRepository(): EntityRepository
-    {
-        return $this->em->getRepository($this->getClass());
-    }
-
-    public function createEntity()
-    {
-        $metadata = $this->em->getClassMetadata($this->getClass());
-        $class = $metadata->getReflectionClass()->name;
-        return new $class;
-    }
-
-    public function saveEntity($entity): void
-    {
-        if (!$entity instanceof ModelInterface) {
-            throw new \InvalidArgumentException(sprintf('$entity must be an instance of %s', ModelInterface::class));
-        }
-
-        $this->em->persist($entity);
-        $this->em->flush();
     }
 }
