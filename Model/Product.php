@@ -7,24 +7,5 @@ namespace Softspring\CatalogBundle\Model;
  */
 abstract class Product implements ProductInterface
 {
-    /**
-     * @var string|null
-     */
-    protected $name;
 
-    /**
-     * @return string|null
-     */
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string|null $name
-     */
-    public function setName(?string $name): void
-    {
-        $this->name = $name;
-    }
 }

@@ -15,11 +15,6 @@ abstract class Model implements ModelInterface
     protected $sku;
 
     /**
-     * @var string|null
-     */
-    protected $name;
-
-    /**
      * @return ProductInterface|null
      */
     public function getProduct(): ?ProductInterface
@@ -49,21 +44,5 @@ abstract class Model implements ModelInterface
     public function setSku(?string $sku): void
     {
         $this->sku = $sku;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string|null $name
-     */
-    public function setName(?string $name): void
-    {
-        $this->name = $name;
     }
 }

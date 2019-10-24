@@ -2,9 +2,9 @@
 
 {% for model in entities %}
     <tr>
-        <td>{{ model.product.name }}</td>
+        <td>{{ model.product.translatedName|translate }}</td>
         <td>
-            <a href="{{ url('sfs_catalog_admin_models_read', {'entity':model}) }}">{{ model.name }}</a>
+            <a href="{{ url('sfs_catalog_admin_models_read', {'entity':model}) }}">{{ model.translatedName|translate }}</a>
         </td>
         <td>{{ model.sku }}</td>
         <td>

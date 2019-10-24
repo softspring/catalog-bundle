@@ -10,8 +10,6 @@
         </many-to-one>
 
         <field name="sku" column="sku" type="string" nullable="false" length="20" unique="true" />
-
-        <field name="name" column="name" type="string" nullable="false" length="180" />
     </mapped-superclass>
 
 </doctrine-mapping>
