@@ -1,4 +1,12 @@
 services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Softspring\CatalogBundle\Form\Admin\:
+        resource: '../../../Form/Admin/Category*'
+
     sfs_catalog.admin.category.controller:
         class: Softspring\AdminBundle\Controller\EntityController
         public: true

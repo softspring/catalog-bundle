@@ -12,6 +12,7 @@ services:
 
     Softspring\CatalogBundle\Form\:
         resource: '../../../Form/*'
+        exclude: '../../../Form/Admin/*'
 
     Softspring\CatalogBundle\Request\ParamConverter\:
         resource: '../../../Request/ParamConverter/*'
