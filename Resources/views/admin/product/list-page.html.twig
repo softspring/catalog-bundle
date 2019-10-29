@@ -3,12 +3,13 @@
 {% for product in entities %}
     <tr>
         <td>
-            <a href="{{ url('sfs_catalog_admin_products_read', {'entity':product}) }}">{{ product.translatedName|translate }}</a>
-            {{ product.translatedName|translate }}
+            <a href="{{ url('sfs_catalog_admin_products_read', {'entity':product}) }}">{{ product.translatedName is defined ? product.translatedName|translate : product.name }}</a>
         </td>
 
         {% if sfs_catalog_product_has_categories() %}
-            <td>{{ product.category.translatedName|translate|default('') }}</td>
+            <td>
+                {{ product.category.translatedName is defined ? product.category.translatedName|translate|default('') : product.category.name|default('') }}
+            </td>
         {% endif %}
 
         <td>
