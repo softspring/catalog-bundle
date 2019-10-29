@@ -6,7 +6,7 @@ use Softspring\CatalogBundle\Form\CatalogListFilterFormInterface;
 use Softspring\CatalogBundle\Manager\ProductManagerInterface;
 use Softspring\CatalogBundle\Model\ModelInterface;
 use Softspring\CatalogBundle\Model\ProductInterface;
-use Softspring\ExtraBundle\Controller\AbstractController;
+use Softspring\CoreBundle\Controller\AbstractController;
 use Softspring\ShopBundle\Model\SalableItemInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
