@@ -1,16 +1,23 @@
 {% extends '@SfsCatalog/layout.html.twig' %}
 
 {% block content %}
-    <div class="card">
-        <h1>{{ product.name }}</h1>
+    <div class="row">
+        <div class="col-4">
+            <img class="card-img" src="https://dummyimage.com/400x300/eeeeee/a1a1a1.jpg" alt="{{ product.translatedName is defined ? product.translatedName|translate : product.name }}" />
+        </div>
+        <div class="col-8">
+            <h1>{{ product.translatedName is defined ? product.translatedName|translate : product.name }}</h1>
 
-        {% for model in product.models %}
-            <a href="{{ url('sfs_catalog_model', {'model':model,'product':model.product}) }}">{{ model.sku }}</a>
+            Models:
+            {% for model in product.models %}
+                <a href="{{ url('sfs_catalog_model', {'model':model,'product':model.product}) }}">{{ model.sku }}</a>
+            {% endfor %}
+
             <br/>
-        {% endfor %}
 
-        {% if can_product_added_to_cart|default(false) %}
-            <a href="{{ url('sfs_shop_cart_add', {'item':product}) }}">add to cart</a>
-        {% endif %}
+            {% if can_product_added_to_cart|default(false) %}
+                <a href="{{ url('sfs_shop_cart_add', {'item':product}) }}">add to cart</a>
+            {% endif %}
+        </div>
     </div>
 {% endblock content %}
