@@ -12,8 +12,8 @@
             </td>
         {% endif %}
 
-        <td>
-            <a href="{{ url('sfs_catalog_admin_products_update', {'entity':product}) }}">update</a>
+        <td align="right">
+            <a href="{{ url('sfs_catalog_admin_products_update', {'entity':product}) }}">update <span class="mdi mdi-18px mdi-square-edit-outline align-middle"></span></a>
         </td>
     </tr>
 {% endfor %}

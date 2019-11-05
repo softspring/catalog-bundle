@@ -3,11 +3,16 @@
 {% block title %}{{ 'admin_categories.update.page_title'|trans }}{% endblock %}
 
 {% block content %}
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3">Update category</h1>
+    </div>
     {{ form_start(form) }}
         {{ form_widget(form) }}
         {{ form_rest(form) }}
-        <input type="submit" value="{{ 'admin_categories.update.actions.update.button'|trans }}" class="btn btn-primary btn-block" />
-        <a href="{{ url('sfs_catalog_admin_categories_list') }}" class="btn btn-secondary btn-block">{{ 'admin_categories.update.actions.cancel.button'|trans }}</a>
-        <a href="{{ url('sfs_catalog_admin_categories_delete', {'entity':entity}) }}" class="btn btn-danger btn-block">{{ 'admin_categories.update.actions.delete.button'|trans }}</a>
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="{{ url('sfs_catalog_admin_categories_list') }}" class="btn btn-outline-secondary">{{ 'admin_categories.update.actions.cancel.button'|trans }}</a>
+            <a href="{{ url('sfs_catalog_admin_categories_delete', {'entity':entity}) }}" class="btn btn-danger">{{ 'admin_categories.update.actions.delete.button'|trans }}</a>
+            <input type="submit" value="{{ 'admin_categories.update.actions.update.button'|trans }}" class="btn btn-primary" />
+        </div>
     {{ form_end(form) }}
 {% endblock content %}

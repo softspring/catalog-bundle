@@ -3,10 +3,15 @@
 {% block title %}{{ 'admin_models.create.page_title'|trans }}{% endblock %}
 
 {% block content %}
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3">Create model</h1>
+    </div>
     {{ form_start(form) }}
         {{ form_widget(form) }}
         {{ form_rest(form) }}
-        <input type="submit" value="{{ 'admin_models.create.actions.create.button'|trans }}" class="btn btn-primary btn-block" />
-        <a href="{{ url('sfs_catalog_admin_models_list') }}" class="btn btn-secondary btn-block">{{ 'admin_models.create.actions.cancel.button'|trans }}</a>
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="{{ url('sfs_catalog_admin_models_list') }}" class="btn btn-outline-secondary">{{ 'admin_models.create.actions.cancel.button'|trans }}</a>
+            <input type="submit" value="{{ 'admin_models.create.actions.create.button'|trans }}" class="btn btn-primary" />
+        </div>
     {{ form_end(form) }}
 {% endblock content %}

@@ -1,7 +1,7 @@
 {% extends '@SfsCatalog/layout.html.twig' %}
 
 {% block content %}
-    <div class="row">
+    <section class="row">
         <div class="col-4">
             <img class="card-img" src="https://dummyimage.com/400x300/eeeeee/a1a1a1.jpg" alt="{{ product.translatedName is defined ? product.translatedName|translate : product.name }}" />
         </div>
@@ -13,11 +13,10 @@
                 <a href="{{ url('sfs_catalog_model', {'model':model,'product':model.product}) }}">{{ model.sku }}</a>
             {% endfor %}
 
-            <br/>
 
             {% if can_product_added_to_cart|default(false) %}
                 <a href="{{ url('sfs_shop_cart_add', {'item':product}) }}">add to cart</a>
             {% endif %}
         </div>
-    </div>
+    </section>
 {% endblock content %}
