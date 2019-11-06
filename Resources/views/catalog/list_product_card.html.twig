@@ -1,11 +1,11 @@
-<div class="card">
+<section class="card">
     <a href="{{ url('sfs_catalog_product', {'product':product}) }}">
         <img class="card-img" src="https://dummyimage.com/400x300/eeeeee/a1a1a1.jpg" alt="{{ product.translatedName is defined ? product.translatedName|translate : product.name }}" />
     </a>
     <div class="card-body">
-        <h4 class="card-title">
+        <h1 class="card-title h4">
             <a href="{{ url('sfs_catalog_product', {'product':product}) }}">{{ product.translatedName is defined ? product.translatedName|translate : product.name }}</a>
-        </h4>
+        </h1>
 {#      <h6 class="card-subtitle mb-2 text-muted"><em>subtitle</em></h6>#}
 {#      <p class="card-text"><em>description</em></p>#}
 {#      <div class="options d-flex flex-fill">#}
@@ -21,4 +21,4 @@
 {#          <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>#}
 {#      </div>#}
     </div>
-</div>
+</section>
