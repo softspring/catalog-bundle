@@ -7,6 +7,7 @@ use Softspring\CatalogBundle\Manager\CategoryManagerInterface;
 use Softspring\CatalogBundle\Manager\ProductManagerInterface;
 use Softspring\CatalogBundle\Model\CategoryTreeInterface;
 use Softspring\CatalogBundle\Model\ProductHasCategoryInterface;
+use Softspring\CatalogBundle\Model\ProductInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -44,6 +45,7 @@ class CatalogExtension extends AbstractExtension
             new TwigFunction('sfs_catalog_has_subcategories', [$this, 'supportsSubcategories']),
             new TwigFunction('sfs_catalog_product_has_categories', [$this, 'productHasCategory']),
             new TwigFunction('sfs_catalog_categories', [$this, 'getCategories']),
+            new TwigFunction('sfs_catalog_product', [$this, 'getProduct']),
         ];
     }
 
@@ -89,5 +91,15 @@ class CatalogExtension extends AbstractExtension
         }
 
         return $this->categoryManager->getRepository()->findBy([]);
+    }
+
+    /**
+     * @param array $criteria
+     *
+     * @return ProductInterface|null
+     */
+    public function getProduct(array $criteria): ?ProductInterface
+    {
+        return $this->productManager->getRepository()->findOneBy($criteria);
     }
 }
