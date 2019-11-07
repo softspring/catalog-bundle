@@ -16,7 +16,7 @@
             <br/>
 
             {% if can_model_added_to_cart|default(false) %}
-                <a href="{{ url('sfs_shop_cart_add', {'item':model}) }}">add to cart</a>
+                <a href="{{ url('sfs_shop_cart_add', {'item':model.id}) }}">add to cart</a>
             {% endif %}
         </div>
     </div>

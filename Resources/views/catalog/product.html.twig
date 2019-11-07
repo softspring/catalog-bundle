@@ -15,7 +15,7 @@
 
 
             {% if can_product_added_to_cart|default(false) %}
-                <a href="{{ url('sfs_shop_cart_add', {'item':product}) }}">add to cart</a>
+                <a href="{{ url('sfs_shop_cart_add', {'item':product.id}) }}">add to cart</a>
             {% endif %}
         </div>
     </section>
