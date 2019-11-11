@@ -9,6 +9,7 @@ class CategoryUpdateForm extends AbstractCategoryForm implements CategoryUpdateF
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
+            'translation_domain' => 'sfs_catalog',
             'label_format' => 'admin_categories.update.form.%name%.label',
         ]);
     }

@@ -7,8 +7,15 @@ admin_products:
 
     create:
         page_title: "New product"
+        title: "Create product"
         form:
             name.label: "Product"
+            translatedName.label: "Translated Name"
+            en.label: "English"
+            es.label: "Spanish"
+            slug.label: "Slug"
+            shippable.label: "Shippable"
+            generatesSubscription.label: "Generates subscription"
         actions:
             create.button: "Create"
             cancel.button: "Cancel"
@@ -17,6 +24,12 @@ admin_products:
         page_title: "Edit product"
         form:
             name.label: "Product"
+            translatedName.label: "Translated Name"
+            en.label: "English"
+            es.label: "Spanish"
+            slug.label: "Slug"
+            shippable.label: "Shippable"
+            generatesSubscription.label: "Generates subscription"
         actions:
             update.button: "Update"
             cancel.button: "Cancel"
@@ -34,6 +47,7 @@ admin_models:
         fields.product.header: "Product"
         fields.name.header: "Model"
         fields.sku.header: "SKU"
+        fields.price.header: "Price"
         actions.header: "Actions"
 
     create:
@@ -42,6 +56,12 @@ admin_models:
             product.label: "Product"
             name.label: "Model"
             sku.label: "SKU"
+            translatedName.label: "Translated Name"
+            en.label: "English"
+            es.label: "Spanish"
+            slug.label: "Slug"
+            price.label: "Price"
+            currency.label: "Currency"
         actions:
             create.button: "Create"
             cancel.button: "Cancel"
@@ -52,6 +72,12 @@ admin_models:
             product.label: "Product"
             name.label: "Model"
             sku.label: "SKU"
+            translatedName.label: "Translated Name"
+            en.label: "English"
+            es.label: "Spanish"
+            slug.label: "Slug"
+            price.label: "Price"
+            currency.label: "Currency"
         actions:
             update.button: "Update"
             cancel.button: "Cancel"

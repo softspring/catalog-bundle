@@ -9,6 +9,7 @@ class ModelUpdateForm extends AbstractModelForm implements ModelUpdateFormInterf
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
+            'translation_domain' => 'sfs_catalog',
             'label_format' => 'admin_models.update.form.%name%.label',
         ]);
     }

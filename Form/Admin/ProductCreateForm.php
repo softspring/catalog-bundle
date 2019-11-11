@@ -9,6 +9,7 @@ class ProductCreateForm extends AbstractProductForm implements ProductCreateForm
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
+            'translation_domain' => 'sfs_catalog',
             'label_format' => 'admin_products.create.form.%name%.label',
         ]);
     }
