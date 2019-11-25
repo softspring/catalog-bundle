@@ -258,4 +258,34 @@ class SfsCatalogEvents
      * @Event("Softspring\AdminBundle\Event\ViewEvent")
      */
     const ADMIN_MODELS_DELETE_VIEW = 'sfs_catalog.admin.models.delete_view';
+
+    /**
+     * @Event(Softspring\CoreBundle\Event\GetResponseRequestEvent")
+     */
+    const CATALOG_LIST_INITIALIZE = 'sfs_catalog.catalog.list_initialize';
+
+    /**
+     * @Event("Softspring\CoreBundle\Event\ViewEvent")
+     */
+    const CATALOG_LIST_VIEW = 'sfs_catalog.catalog.list_view';
+
+    /**
+     * @Event("Softspring\CatalogBundle\Event\GetResponseProductEvent")
+     */
+    const CATALOG_PRODUCT_INITIALIZE = 'sfs_catalog.catalog.product_initialize';
+
+    /**
+     * @Event("Softspring\CoreBundle\Event\ViewEvent")
+     */
+    const CATALOG_PRODUCT_VIEW = 'sfs_catalog.catalog.product_view';
+
+    /**
+     * @Event("Softspring\CatalogBundle\Event\GetResponseModelEvent")
+     */
+    const CATALOG_MODEL_INITIALIZE = 'sfs_catalog.catalog.model_initialize';
+
+    /**
+     * @Event("Softspring\CoreBundle\Event\ViewEvent")
+     */
+    const CATALOG_MODEL_VIEW = 'sfs_catalog.catalog.model_view';
 }
