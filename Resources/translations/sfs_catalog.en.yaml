@@ -15,7 +15,6 @@ admin_products:
             es.label: "Spanish"
             slug.label: "Slug"
             shippable.label: "Shippable"
-            generatesSubscription.label: "Generates subscription"
         actions:
             create.button: "Create"
             cancel.button: "Cancel"
@@ -29,7 +28,6 @@ admin_products:
             es.label: "Spanish"
             slug.label: "Slug"
             shippable.label: "Shippable"
-            generatesSubscription.label: "Generates subscription"
         actions:
             update.button: "Update"
             cancel.button: "Cancel"
