@@ -1,3 +1,4 @@
+{% trans_default_domain 'sfs_catalog' %}
 {% extends '@SfsCatalog/layout.html.twig' %}
 
 {% block content %}
@@ -15,7 +16,7 @@
 
 
             {% if can_product_added_to_cart|default(false) %}
-                <a href="{{ url('sfs_shop_cart_add', {'item':product.id}) }}">add to cart</a>
+                <a href="{{ url('sfs_shop_cart_add', {'item':product.id}) }}">{{ 'product.add_to_cart'|trans }} <span class="mdi mdi-18px mdi-cart-arrow-down"></span></a>
             {% endif %}
         </div>
     </section>
