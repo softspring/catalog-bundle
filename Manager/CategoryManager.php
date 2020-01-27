@@ -3,12 +3,12 @@
 namespace Softspring\CatalogBundle\Manager;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Softspring\AdminBundle\Manager\AdminEntityManagerTrait;
 use Softspring\CatalogBundle\Model\CategoryInterface;
+use Softspring\CrudlBundle\Manager\CrudlEntityManagerTrait;
 
 class CategoryManager implements CategoryManagerInterface
 {
-    use AdminEntityManagerTrait;
+    use CrudlEntityManagerTrait;
 
     /**
      * @var EntityManagerInterface

@@ -4,7 +4,8 @@
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "softspring/crudl-bundle": "^1.1"
     },
     "suggest": {
         "softspring/admin-bundle": "Use softspring admin templates",
