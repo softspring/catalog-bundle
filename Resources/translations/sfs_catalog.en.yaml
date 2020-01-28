@@ -4,6 +4,9 @@ admin_products:
         fields.name.header: "Product"
         fields.category.header: "Category"
         actions.header: "Actions"
+        actions:
+            update.button: "Update"
+            delete.button: "Delete"
 
     create:
         page_title: "New product"
@@ -47,6 +50,9 @@ admin_models:
         fields.sku.header: "SKU"
         fields.price.header: "Price"
         actions.header: "Actions"
+        actions:
+            update.button: "Update"
+            delete.button: "Delete"
 
     create:
         page_title: "New model"
