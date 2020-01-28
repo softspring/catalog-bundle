@@ -8,13 +8,12 @@ services:
         resource: '../../../Form/Admin/Model*'
 
     sfs_catalog.admin.model.controller:
-        class: Softspring\AdminBundle\Controller\EntityController
+        class: Softspring\CrudlBundle\Controller\CrudlController
         public: true
         calls:
             - { method: setContainer, arguments: ['@service_container'] }
         arguments:
             $manager: '@Softspring\CatalogBundle\Manager\ModelManagerInterface'
-            $eventDispatcher: '@event_dispatcher'
             $listFilterForm: '@Softspring\CatalogBundle\Form\Admin\ModelListFilterFormInterface'
             $createForm: '@Softspring\CatalogBundle\Form\Admin\ModelCreateFormInterface'
             $updateForm: '@Softspring\CatalogBundle\Form\Admin\ModelUpdateFormInterface'

@@ -8,13 +8,12 @@ services:
         resource: '../../../Form/Admin/Category*'
 
     sfs_catalog.admin.category.controller:
-        class: Softspring\AdminBundle\Controller\EntityController
+        class: Softspring\CrudlBundle\Controller\CrudlController
         public: true
         calls:
             - { method: setContainer, arguments: ['@service_container'] }
         arguments:
             $manager: '@Softspring\CatalogBundle\Manager\CategoryManagerInterface'
-            $eventDispatcher: '@event_dispatcher'
             $listFilterForm: '@Softspring\CatalogBundle\Form\Admin\CategoryListFilterFormInterface'
             $createForm: '@Softspring\CatalogBundle\Form\Admin\CategoryCreateFormInterface'
             $updateForm: '@Softspring\CatalogBundle\Form\Admin\CategoryUpdateFormInterface'

@@ -2,10 +2,9 @@
 
 namespace Softspring\CatalogBundle\Form\Admin;
 
-use Softspring\AdminBundle\Form\AdminEntityCreateFormInterface;
-use Symfony\Component\Form\FormTypeInterface;
+use Softspring\CrudlBundle\Form\EntityCreateFormInterface;
 
-interface ModelCreateFormInterface extends FormTypeInterface, AdminEntityCreateFormInterface
+interface ModelCreateFormInterface extends EntityCreateFormInterface
 {
 
 }

@@ -3,13 +3,12 @@
 namespace Softspring\CatalogBundle\Manager;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\EntityRepository;
-use Softspring\AdminBundle\Manager\AdminEntityManagerTrait;
 use Softspring\CatalogBundle\Model\ProductInterface;
+use Softspring\CrudlBundle\Manager\CrudlEntityManagerTrait;
 
 class ProductManager implements ProductManagerInterface
 {
-    use AdminEntityManagerTrait;
+    use CrudlEntityManagerTrait;
 
     /**
      * @var EntityManagerInterface
