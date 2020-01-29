@@ -19,6 +19,7 @@ services:
             $updateForm: '@Softspring\CatalogBundle\Form\Admin\ModelUpdateFormInterface'
             $deleteForm: '@Softspring\CatalogBundle\Form\Admin\ModelDeleteFormInterface'
             $config:
+                entity_attribute: 'model'
                 list:
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_LIST_VIEW
                     view: '@@SfsCatalog/admin/model/list.html.twig'

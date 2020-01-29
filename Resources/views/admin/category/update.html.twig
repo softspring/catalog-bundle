@@ -11,7 +11,7 @@
         {{ form_rest(form) }}
         <div class="d-flex justify-content-between align-items-center">
             <a href="{{ url('sfs_catalog_admin_categories_list') }}" class="btn btn-outline-secondary">{{ 'admin_categories.update.actions.cancel.button'|trans }}</a>
-            <a href="{{ url('sfs_catalog_admin_categories_delete', {'entity':entity}) }}" class="btn btn-danger">{{ 'admin_categories.update.actions.delete.button'|trans }}</a>
+            <a href="{{ url('sfs_catalog_admin_categories_delete', {'category':category}) }}" class="btn btn-danger">{{ 'admin_categories.update.actions.delete.button'|trans }}</a>
             <input type="submit" value="{{ 'admin_categories.update.actions.update.button'|trans }}" class="btn btn-primary" />
         </div>
     {{ form_end(form) }}

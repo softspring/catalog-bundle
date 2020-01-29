@@ -4,11 +4,11 @@
     <tr>
         <td>{{ model.product.translatedName|translate }}</td>
         <td>
-            <a href="{{ url('sfs_catalog_admin_models_read', {'entity':model}) }}">{{ model.translatedName|translate }}</a>
+            <a href="{{ url('sfs_catalog_admin_models_read', {'model':model}) }}">{{ model.translatedName|translate }}</a>
         </td>
         <td>{{ model.sku }}</td>
         <td>
-            <a href="{{ url('sfs_catalog_admin_models_update', {'entity':model}) }}">update</a>
+            <a href="{{ url('sfs_catalog_admin_models_update', {'model':model}) }}">update</a>
         </td>
     </tr>
 {% endfor %}

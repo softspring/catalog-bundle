@@ -3,7 +3,7 @@
 {% for product in entities %}
     <tr>
         <td>
-            <a href="{{ url('sfs_catalog_admin_products_read', {'entity':product}) }}">{{ product.translatedName is defined ? product.translatedName|translate : product.name }}</a>
+            <a href="{{ url('sfs_catalog_admin_products_read', {'product':product}) }}">{{ product.translatedName is defined ? product.translatedName|translate : product.name }}</a>
         </td>
 
         {% if sfs_catalog_product_has_categories() %}
@@ -13,7 +13,7 @@
         {% endif %}
 
         <td align="right">
-            <a href="{{ url('sfs_catalog_admin_products_update', {'entity':product}) }}" class="text-nowrap">update <span class="mdi mdi-18px mdi-square-edit-outline align-middle"></span></a>
+            <a href="{{ url('sfs_catalog_admin_products_update', {'product':product}) }}" class="text-nowrap">update <span class="mdi mdi-18px mdi-square-edit-outline align-middle"></span></a>
         </td>
     </tr>
 {% endfor %}

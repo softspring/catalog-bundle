@@ -8,12 +8,12 @@ sfs_catalog_admin_categories_create:
 
 sfs_catalog_admin_categories_update:
     controller: sfs_catalog.admin.category.controller::update
-    path: /{entity}/update
+    path: /{category}/update
 
 sfs_catalog_admin_categories_delete:
     controller: sfs_catalog.admin.category.controller::delete
-    path: /{entity}/delete
+    path: /{category}/delete
 
 sfs_catalog_admin_categories_read:
     controller: sfs_catalog.admin.category.controller::read
-    path: /{entity}
+    path: /{category}

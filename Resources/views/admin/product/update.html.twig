@@ -11,7 +11,7 @@
         {{ form_rest(form) }}
         <div class="d-flex justify-content-end align-items-center">
             <a href="{{ url('sfs_catalog_admin_products_list') }}" class="btn btn-outline-secondary ml-3">{{ 'admin_products.update.actions.cancel.button'|trans }}</a>
-            <a href="{{ url('sfs_catalog_admin_products_delete', {'entity':entity}) }}" class="btn btn-danger ml-3">{{ 'admin_products.update.actions.delete.button'|trans }}</a>
+            <a href="{{ url('sfs_catalog_admin_products_delete', {'product':product}) }}" class="btn btn-danger ml-3">{{ 'admin_products.update.actions.delete.button'|trans }}</a>
             <input type="submit" value="{{ 'admin_products.update.actions.update.button'|trans }}" class="btn btn-primary ml-3" />
         </div>
     {{ form_end(form) }}

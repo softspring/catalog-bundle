@@ -8,12 +8,12 @@ sfs_catalog_admin_models_create:
 
 sfs_catalog_admin_models_update:
     controller: sfs_catalog.admin.model.controller::update
-    path: /{entity}/update
+    path: /{model}/update
 
 sfs_catalog_admin_models_delete:
     controller: sfs_catalog.admin.model.controller::delete
-    path: /{entity}/delete
+    path: /{model}/delete
 
 sfs_catalog_admin_models_read:
     controller: sfs_catalog.admin.model.controller::read
-    path: /{entity}
+    path: /{model}
