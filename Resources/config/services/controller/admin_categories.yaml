@@ -21,10 +21,12 @@ services:
             $config:
                 entity_attribute: 'category'
                 list:
+                    is_granted: 'ROLE_CATALOG_ADMIN_CATEGORIES_LIST'
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_LIST_VIEW
                     view: '@@SfsCatalog/admin/category/list.html.twig'
                     view_page: '@@SfsCatalog/admin/category/list-page.html.twig'
                 create:
+                    is_granted: 'ROLE_CATALOG_ADMIN_CATEGORIES_CREATE'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_CREATE_INITIALIZE
                     form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_CREATE_FORM_VALID
                     success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_CREATE_SUCCESS
@@ -33,6 +35,7 @@ services:
                     success_redirect_to: 'sfs_catalog_admin_categories_list'
                     view: '@@SfsCatalog/admin/category/create.html.twig'
                 update:
+                    is_granted: 'ROLE_CATALOG_ADMIN_CATEGORIES_UPDATE'
                     param_converter_key: 'id'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_UPDATE_INITIALIZE
                     form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_UPDATE_FORM_VALID
@@ -42,6 +45,7 @@ services:
                     success_redirect_to: 'sfs_catalog_admin_categories_list'
                     view: '@@SfsCatalog/admin/category/update.html.twig'
                 delete:
+                    is_granted: 'ROLE_CATALOG_ADMIN_CATEGORIES_DELETE'
                     param_converter_key: 'id'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_DELETE_INITIALIZE
                     form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_DELETE_FORM_VALID
@@ -51,6 +55,7 @@ services:
                     success_redirect_to: 'sfs_catalog_admin_categories_list'
                     view: '@@SfsCatalog/admin/category/delete.html.twig'
                 read:
+                    is_granted: 'ROLE_CATALOG_ADMIN_CATEGORIES_DETAILS'
                     param_converter_key: 'id'
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_CATEGORIES_READ_VIEW
                     view: '@@SfsCatalog/admin/category/read.html.twig'

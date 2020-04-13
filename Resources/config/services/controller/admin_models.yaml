@@ -21,10 +21,12 @@ services:
             $config:
                 entity_attribute: 'model'
                 list:
+                    is_granted: 'ROLE_CATALOG_ADMIN_MODELS_LIST'
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_LIST_VIEW
                     view: '@@SfsCatalog/admin/model/list.html.twig'
                     view_page: '@@SfsCatalog/admin/model/list-page.html.twig'
                 create:
+                    is_granted: 'ROLE_CATALOG_ADMIN_MODELS_CREATE'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_CREATE_INITIALIZE
                     form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_CREATE_FORM_VALID
                     success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_CREATE_SUCCESS
@@ -33,6 +35,7 @@ services:
                     success_redirect_to: 'sfs_catalog_admin_models_list'
                     view: '@@SfsCatalog/admin/model/create.html.twig'
                 update:
+                    is_granted: 'ROLE_CATALOG_ADMIN_MODELS_UPDATE'
                     param_converter_key: 'id'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_UPDATE_INITIALIZE
                     form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_UPDATE_FORM_VALID
@@ -42,6 +45,7 @@ services:
                     success_redirect_to: 'sfs_catalog_admin_models_list'
                     view: '@@SfsCatalog/admin/model/update.html.twig'
                 delete:
+                    is_granted: 'ROLE_CATALOG_ADMIN_MODELS_DELETE'
                     param_converter_key: 'id'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_DELETE_INITIALIZE
                     form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_DELETE_FORM_VALID
@@ -51,6 +55,7 @@ services:
                     success_redirect_to: 'sfs_catalog_admin_models_list'
                     view: '@@SfsCatalog/admin/model/delete.html.twig'
                 read:
+                    is_granted: 'ROLE_CATALOG_ADMIN_MODELS_DETAILS'
                     param_converter_key: 'id'
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_MODELS_READ_VIEW
                     view: '@@SfsCatalog/admin/model/read.html.twig'
