@@ -1,12 +1,17 @@
 admin_products:
     list:
-        page_title: "Models"
+        page_title: "Products"
         fields.name.header: "Product"
         fields.category.header: "Category"
         actions.header: "Actions"
         actions:
             update.button: "Update"
             delete.button: "Delete"
+            delete.title: "Are you sure?"
+
+    read:
+        page_title: "Product details"
+        title: "Product details"
 
     create:
         page_title: "New product"
@@ -18,6 +23,7 @@ admin_products:
             es.label: "Spanish"
             slug.label: "Slug"
             shippable.label: "Shippable"
+            createSubscription.label: "Purchasing creates subscription"
         actions:
             create.button: "Create"
             cancel.button: "Cancel"
@@ -31,6 +37,7 @@ admin_products:
             es.label: "Spanish"
             slug.label: "Slug"
             shippable.label: "Shippable"
+            createSubscription.label: "Purchasing creates subscription"
         actions:
             update.button: "Update"
             cancel.button: "Cancel"
