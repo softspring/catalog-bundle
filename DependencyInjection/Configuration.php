@@ -22,6 +22,7 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('class')->defaultValue('App\Entity\Product')->end()
+                        ->booleanNode('admin')->defaultFalse()->end()
                     ->end()
                 ->end()
 
@@ -29,6 +30,7 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('class')->defaultNull()->end()
+                        ->booleanNode('admin')->defaultFalse()->end()
                     ->end()
                 ->end()
 
@@ -36,6 +38,7 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('class')->defaultNull()->end()
+                        ->booleanNode('admin')->defaultFalse()->end()
                     ->end()
                 ->end()
             ->end()
