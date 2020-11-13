@@ -10,16 +10,35 @@
     "suggest": {
         "softspring/admin-bundle": "Use softspring admin templates",
         "softspring/core-bundle": "Use softspring core bundle",
+        "softspring/shop-bundle": "Use softspring shop bundle",
         "softspring/doctrine-simple-translation-type-bundle": "Allow to translate entities easily"
     },
     "autoload": {
         "psr-4": {
             "Softspring\\CatalogBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Softspring\\CatalogBundle\\Tests\\": "Tests/"
         }
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1",
+        "symfony/dependency-injection": "^5.1",
+        "symfony/config": "^5.1",
+        "symfony/http-kernel": "^5.1",
+        "doctrine/orm": "^2.7",
+        "symfony/form": "^5.1",
+        "twig/twig": "^3.1",
+        "doctrine/doctrine-bundle": "^2.2"
     }
 }

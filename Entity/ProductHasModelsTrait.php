@@ -55,6 +55,10 @@ trait ProductHasModelsTrait
     {
         if ($this->models->contains($model)) {
             $this->models->removeElement($model);
+
+            if ($this instanceof ProductHasModelsInterface && $this->getDefaultModel() === $model) {
+                $this->setDefaultModel(null);
+            }
         }
     }
 

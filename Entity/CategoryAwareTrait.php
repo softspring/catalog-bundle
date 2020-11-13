@@ -2,6 +2,7 @@
 
 namespace Softspring\CatalogBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Softspring\CatalogBundle\Model\CategoryInterface;
 
 trait CategoryAwareTrait
