@@ -5,6 +5,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/softspring/catalog-bundle/v/unstable.svg)](https://packagist.org/packages/softspring/catalog-bundle)
 [![License](https://poser.pugx.org/softspring/catalog-bundle/license.svg)](https://packagist.org/packages/softspring/catalog-bundle)
 [![Total Downloads](https://poser.pugx.org/softspring/catalog-bundle/downloads)](https://packagist.org/packages/softspring/catalog-bundle)
+[![Build status](https://travis-ci.com/softspring/catalog-bundle.svg?branch=master)](https://travis-ci.com/softspring/catalog-bundle)
 
 # Installation
 
