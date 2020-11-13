@@ -5,7 +5,7 @@ namespace Softspring\CatalogBundle\Model;
 abstract class Model implements ModelInterface
 {
     /**
-     * @var ProductInterface|null
+     * @var ProductInterface|ProductHasModelsInterface|null
      */
     protected $product;
 
@@ -15,7 +15,7 @@ abstract class Model implements ModelInterface
     protected $sku;
 
     /**
-     * @return ProductInterface|null
+     * @return ProductInterface|ProductHasModelsInterface|null
      */
     public function getProduct(): ?ProductInterface
     {
@@ -23,11 +23,19 @@ abstract class Model implements ModelInterface
     }
 
     /**
-     * @param ProductInterface|null $product
+     * @param ProductInterface|ProductHasModelsInterface|null $product
      */
     public function setProduct(?ProductInterface $product): void
     {
         $this->product = $product;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function isDefault(): bool
+    {
+        return $this->getProduct() && $this->getProduct()->getDefaultModel() === $this;
     }
 
     /**

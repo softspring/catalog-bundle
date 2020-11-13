@@ -33,4 +33,9 @@ interface ModelInterface
      * @param ProductInterface|null $product
      */
     public function setProduct(?ProductInterface $product): void;
+
+    /**
+     * @return bool
+     */
+    public function isDefault(): bool;
 }
