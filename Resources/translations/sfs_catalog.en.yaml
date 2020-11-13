@@ -22,8 +22,6 @@ admin_products:
             en.label: "English"
             es.label: "Spanish"
             slug.label: "Slug"
-            shippable.label: "Shippable"
-            createSubscription.label: "Purchasing creates subscription"
         actions:
             create.button: "Create"
             cancel.button: "Cancel"
@@ -36,8 +34,6 @@ admin_products:
             en.label: "English"
             es.label: "Spanish"
             slug.label: "Slug"
-            shippable.label: "Shippable"
-            createSubscription.label: "Purchasing creates subscription"
         actions:
             update.button: "Update"
             cancel.button: "Cancel"
@@ -45,6 +41,53 @@ admin_products:
 
     delete:
         page_title: "Delete product"
+        actions:
+            delete.button: "Delete"
+            cancel.button: "Cancel"
+            
+admin_packs:
+    list:
+        page_title: "Packs"
+        fields.name.header: "Pack"
+        fields.category.header: "Category"
+        actions.header: "Actions"
+        actions:
+            update.button: "Update"
+            delete.button: "Delete"
+            delete.title: "Are you sure?"
+
+    read:
+        page_title: "Pack details"
+        title: "Pack details"
+
+    create:
+        page_title: "New pack"
+        title: "Create pack"
+        form:
+            name.label: "Pack"
+            translatedName.label: "Translated Name"
+            en.label: "English"
+            es.label: "Spanish"
+            slug.label: "Slug"
+        actions:
+            create.button: "Create"
+            cancel.button: "Cancel"
+
+    update:
+        page_title: "Edit pack"
+        form:
+            name.label: "Pack"
+            translatedName.label: "Translated Name"
+            en.label: "English"
+            es.label: "Spanish"
+            slug.label: "Slug"
+        actions:
+            update.button: "Update"
+            cancel.button: "Cancel"
+            delete.button: "Delete"
+
+    delete:
+        page_title: "Delete pack"
         actions:
             delete.button: "Delete"
             cancel.button: "Cancel"

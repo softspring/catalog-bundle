@@ -4,6 +4,7 @@ namespace Softspring\CatalogBundle\Twig\Extension;
 
 use Doctrine\Common\Collections\Collection;
 use Softspring\CatalogBundle\Manager\CategoryManagerInterface;
+use Softspring\CatalogBundle\Manager\PackManagerInterface;
 use Softspring\CatalogBundle\Manager\ProductManagerInterface;
 use Softspring\CatalogBundle\Model\CategoryTreeInterface;
 use Softspring\CatalogBundle\Model\ProductHasCategoryInterface;
@@ -24,15 +25,22 @@ class CatalogExtension extends AbstractExtension
     protected $productManager;
 
     /**
+     * @var PackManagerInterface|null
+     */
+    protected $packManager;
+
+    /**
      * CatalogExtension constructor.
      *
      * @param CategoryManagerInterface|null $categoryManager
      * @param ProductManagerInterface|null  $productManager
+     * @param PackManagerInterface|null     $packManager
      */
-    public function __construct(?CategoryManagerInterface $categoryManager, ?ProductManagerInterface $productManager)
+    public function __construct(?CategoryManagerInterface $categoryManager, ?ProductManagerInterface $productManager, ?PackManagerInterface $packManager)
     {
         $this->categoryManager = $categoryManager;
         $this->productManager = $productManager;
+        $this->packManager = $packManager;
     }
 
     /**
@@ -41,8 +49,11 @@ class CatalogExtension extends AbstractExtension
     public function getFunctions()
     {
         return [
-            new TwigFunction('sfs_catalog_has_categories', [$this, 'supportsCategories']),
-            new TwigFunction('sfs_catalog_has_subcategories', [$this, 'supportsSubcategories']),
+            new TwigFunction('sfs_catalog_has_categories', [$this, 'supportsCategories'], ['deprecated' => true]),
+            new TwigFunction('sfs_catalog_supports_categories', [$this, 'supportsCategories']),
+            new TwigFunction('sfs_catalog_has_subcategories', [$this, 'supportsSubcategories'], ['deprecated' => true]),
+            new TwigFunction('sfs_catalog_supports_subcategories', [$this, 'supportsSubcategories']),
+            new TwigFunction('sfs_catalog_supports_packs', [$this, 'supportsPacks']),
             new TwigFunction('sfs_catalog_product_has_categories', [$this, 'productHasCategory']),
             new TwigFunction('sfs_catalog_categories', [$this, 'getCategories']),
             new TwigFunction('sfs_catalog_product', [$this, 'getProduct']),
@@ -55,6 +66,14 @@ class CatalogExtension extends AbstractExtension
     public function supportsCategories(): bool
     {
         return $this->categoryManager instanceof CategoryManagerInterface;
+    }
+
+    /**
+     * @return bool
+     */
+    public function supportsPacks(): bool
+    {
+        return $this->packManager instanceof PackManagerInterface;
     }
 
     /**
@@ -100,6 +119,9 @@ class CatalogExtension extends AbstractExtension
      */
     public function getProduct(array $criteria): ?ProductInterface
     {
-        return $this->productManager->getRepository()->findOneBy($criteria);
+        /** @var ProductInterface|null $product */
+        $product = $this->productManager->getRepository()->findOneBy($criteria);
+
+        return $product;
     }
 }

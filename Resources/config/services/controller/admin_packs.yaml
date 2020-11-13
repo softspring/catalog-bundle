@@ -1,0 +1,61 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Softspring\CatalogBundle\Form\Admin\:
+        resource: '../../../Form/Admin/Pack*'
+
+    sfs_catalog.admin.pack.controller:
+        class: Softspring\CrudlBundle\Controller\CrudlController
+        public: true
+        calls:
+            - { method: setContainer, arguments: ['@service_container'] }
+        arguments:
+            $manager: '@Softspring\CatalogBundle\Manager\PackManagerInterface'
+            $listFilterForm: '@Softspring\CatalogBundle\Form\Admin\PackListFilterFormInterface'
+            $createForm: '@Softspring\CatalogBundle\Form\Admin\PackCreateFormInterface'
+            $updateForm: '@Softspring\CatalogBundle\Form\Admin\PackUpdateFormInterface'
+            $deleteForm: '@Softspring\CatalogBundle\Form\Admin\PackDeleteFormInterface'
+            $config:
+                entity_attribute: 'pack'
+                list:
+                    is_granted: 'ROLE_CATALOG_ADMIN_PACKS_LIST'
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_LIST_VIEW
+                    view: '@@SfsCatalog/admin/pack/list.html.twig'
+                    view_page: '@@SfsCatalog/admin/pack/list-page.html.twig'
+                create:
+                    is_granted: 'ROLE_CATALOG_ADMIN_PACKS_CREATE'
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_CREATE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_CREATE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_CREATE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_CREATE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_CREATE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_packs_list'
+                    view: '@@SfsCatalog/admin/pack/create.html.twig'
+                update:
+                    is_granted: 'ROLE_CATALOG_ADMIN_PACKS_UPDATE'
+                    param_converter_key: 'id'
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_UPDATE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_UPDATE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_UPDATE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_UPDATE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_UPDATE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_packs_list'
+                    view: '@@SfsCatalog/admin/pack/update.html.twig'
+                delete:
+                    is_granted: 'ROLE_CATALOG_ADMIN_PACKS_DELETE'
+                    param_converter_key: 'id'
+                    initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_DELETE_INITIALIZE
+                    form_valid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_DELETE_FORM_VALID
+                    success_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_DELETE_SUCCESS
+                    form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_DELETE_FORM_INVALID
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_DELETE_VIEW
+                    success_redirect_to: 'sfs_catalog_admin_packs_list'
+                    view: '@@SfsCatalog/admin/pack/delete.html.twig'
+                read:
+                    is_granted: 'ROLE_CATALOG_ADMIN_PACKS_DETAILS'
+                    param_converter_key: 'id'
+                    view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_READ_VIEW
+                    view: '@@SfsCatalog/admin/pack/read.html.twig'

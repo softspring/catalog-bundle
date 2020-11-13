@@ -1,0 +1,19 @@
+sfs_catalog_admin_packs_list:
+    controller: sfs_catalog.admin.pack.controller::list
+    path: /
+
+sfs_catalog_admin_packs_create:
+    controller: sfs_catalog.admin.pack.controller::create
+    path: /create
+
+sfs_catalog_admin_packs_update:
+    controller: sfs_catalog.admin.pack.controller::update
+    path: /{pack}/update
+
+sfs_catalog_admin_packs_delete:
+    controller: sfs_catalog.admin.pack.controller::delete
+    path: /{pack}/delete
+
+sfs_catalog_admin_packs_read:
+    controller: sfs_catalog.admin.pack.controller::read
+    path: /{pack}

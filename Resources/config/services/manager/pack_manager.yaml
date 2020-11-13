@@ -1,0 +1,12 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $em: '@sfs_catalog.entity_manager'
+
+    Softspring\CatalogBundle\Manager\PackManagerInterface:
+        class: Softspring\CrudlBundle\Manager\DefaultCrudlEntityManager
+        arguments:
+            $class: 'Softspring\CatalogBundle\Model\PackInterface'

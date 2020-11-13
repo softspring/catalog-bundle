@@ -53,6 +53,15 @@ class SfsCatalogExtension extends Extension implements PrependExtensionInterface
             }
         }
 
+        if ($config['pack']['class'] ?? false) {
+            $loader->load('manager/pack_manager.yaml');
+
+            if ($config['pack']['admin']) {
+                $loader->load('controller/admin_packs.yaml');
+            }
+        }
+    }
+
     public function prepend(ContainerBuilder $container)
     {
         $doctrineConfig = [];

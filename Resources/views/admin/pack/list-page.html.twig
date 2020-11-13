@@ -1,0 +1,19 @@
+{% trans_default_domain 'sfs_catalog' %}
+
+{% for pack in entities %}
+    <tr>
+        <td>
+            <a href="{{ url('sfs_catalog_admin_packs_read', {'pack':pack}) }}">{{ pack.translatedName is defined ? pack.translatedName|translate : pack.name }}</a>
+        </td>
+
+        {% if sfs_catalog_pack_has_categories() %}
+            <td>
+                {{ pack.category.translatedName is defined ? pack.category.translatedName|translate|default('') : pack.category.name|default('') }}
+            </td>
+        {% endif %}
+
+        <td align="right">
+            <a href="{{ url('sfs_catalog_admin_packs_update', {'pack':pack}) }}" class="text-nowrap">update <span class="mdi mdi-18px mdi-square-edit-outline align-middle"></span></a>
+        </td>
+    </tr>
+{% endfor %}

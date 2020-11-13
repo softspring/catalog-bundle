@@ -41,6 +41,14 @@ class Configuration implements ConfigurationInterface
                         ->booleanNode('admin')->defaultFalse()->end()
                     ->end()
                 ->end()
+
+                ->arrayNode('pack')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('class')->defaultNull()->end()
+                        ->booleanNode('admin')->defaultFalse()->end()
+                    ->end()
+                ->end()
             ->end()
         ;
 

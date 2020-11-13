@@ -3,6 +3,7 @@
 namespace Softspring\CatalogBundle\DependencyInjection\Compiler;
 
 use Softspring\CatalogBundle\Model\CategoryInterface;
+use Softspring\CatalogBundle\Model\PackInterface;
 use Softspring\CatalogBundle\Model\ProductInterface;
 use Softspring\CatalogBundle\Model\ModelInterface;
 use Softspring\CoreBundle\DependencyInjection\Compiler\AbstractResolveDoctrineTargetEntityPass;
@@ -26,5 +27,6 @@ class ResolveDoctrineTargetEntityPass extends AbstractResolveDoctrineTargetEntit
         $this->setTargetEntityFromParameter('sfs_catalog.product.class', ProductInterface::class, $container, true);
         $this->setTargetEntityFromParameter('sfs_catalog.model.class', ModelInterface::class, $container, false);
         $this->setTargetEntityFromParameter('sfs_catalog.category.class', CategoryInterface::class, $container, false);
+        $this->setTargetEntityFromParameter('sfs_catalog.pack.class', PackInterface::class, $container, false);
     }
 }
