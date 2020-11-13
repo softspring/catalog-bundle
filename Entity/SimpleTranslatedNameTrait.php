@@ -13,7 +13,7 @@ trait SimpleTranslatedNameTrait
     protected $translatedName;
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getName(): ?string
     {
@@ -21,24 +21,18 @@ trait SimpleTranslatedNameTrait
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function setName(?string $name): void
     {
         $this->getTranslatedName()->setTranslation(null, $name);
     }
 
-    /**
-     * @return SimpleTranslation
-     */
     public function getTranslatedName(): SimpleTranslation
     {
         return $this->translatedName;
     }
 
-    /**
-     * @param SimpleTranslation $translatedName
-     */
     public function setTranslatedName(SimpleTranslation $translatedName): void
     {
         $this->translatedName = $translatedName;

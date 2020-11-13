@@ -20,6 +20,5 @@ class PackDeleteForm extends AbstractType implements PackDeleteFormInterface
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
     }
 }

@@ -20,6 +20,5 @@ class CategoryDeleteForm extends AbstractType implements CategoryDeleteFormInter
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
     }
 }

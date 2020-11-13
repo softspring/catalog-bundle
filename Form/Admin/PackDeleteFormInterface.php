@@ -6,5 +6,4 @@ use Softspring\CrudlBundle\Form\EntityDeleteFormInterface;
 
 interface PackDeleteFormInterface extends EntityDeleteFormInterface
 {
-
 }

@@ -36,10 +36,6 @@ class CatalogController extends AbstractController
 
     /**
      * CatalogController constructor.
-     *
-     * @param ProductManagerInterface        $productManager
-     * @param CatalogListFilterFormInterface $listFilterForm
-     * @param EventDispatcherInterface       $eventDispatcher
      */
     public function __construct(ProductManagerInterface $productManager, CatalogListFilterFormInterface $listFilterForm, EventDispatcherInterface $eventDispatcher)
     {
@@ -48,11 +44,6 @@ class CatalogController extends AbstractController
         $this->eventDispatcher = $eventDispatcher;
     }
 
-    /**
-     * @param Request $request
-     *
-     * @return Response
-     */
     public function list(Request $request): Response
     {
         if ($response = $this->dispatchGetResponse(SfsCatalogEvents::CATALOG_LIST_INITIALIZE, new GetResponseRequestEvent($request))) {
@@ -73,12 +64,6 @@ class CatalogController extends AbstractController
         return $this->render('@SfsCatalog/catalog/list.html.twig', $viewData->getArrayCopy());
     }
 
-    /**
-     * @param ProductInterface|null $product
-     * @param Request               $request
-     *
-     * @return Response
-     */
     public function product(?ProductInterface $product, Request $request): Response
     {
         if (!$product instanceof ProductInterface) {
@@ -92,7 +77,7 @@ class CatalogController extends AbstractController
         // show view
         $viewData = new \ArrayObject([
             'product' => $product,
-            'can_product_added_to_cart' => $product instanceof SalableItemInterface
+            'can_product_added_to_cart' => $product instanceof SalableItemInterface,
         ]);
 
         $this->eventDispatcher->dispatch(new ViewEvent($viewData), SfsCatalogEvents::CATALOG_PRODUCT_VIEW);
@@ -100,13 +85,6 @@ class CatalogController extends AbstractController
         return $this->render('@SfsCatalog/catalog/product.html.twig', $viewData->getArrayCopy());
     }
 
-    /**
-     * @param ProductInterface|null $product
-     * @param ModelInterface|null   $model
-     * @param Request               $request
-     *
-     * @return Response
-     */
     public function model(?ProductInterface $product, ?ModelInterface $model, Request $request): Response
     {
         if (!$product instanceof ProductInterface) {
@@ -124,7 +102,7 @@ class CatalogController extends AbstractController
         $viewData = new \ArrayObject([
             'product' => $product,
             'model' => $model,
-            'can_model_added_to_cart' => $model instanceof SalableItemInterface
+            'can_model_added_to_cart' => $model instanceof SalableItemInterface,
         ]);
 
         $this->eventDispatcher->dispatch(new ViewEvent($viewData), SfsCatalogEvents::CATALOG_MODEL_VIEW);

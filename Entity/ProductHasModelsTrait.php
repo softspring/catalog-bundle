@@ -23,34 +23,24 @@ trait ProductHasModelsTrait
      */
     protected $defaultModel;
 
-    /**
-     * @return Collection
-     */
     public function getModels(): Collection
     {
         return $this->models;
     }
 
-    /**
-     * @param ModelInterface $model
-     */
     public function addModel(ModelInterface $model): void
     {
         /** @var ProductInterface $this */
-
         if (!$this->models->contains($model)) {
             $this->models->add($model);
             $model->setProduct($this);
 
-            if ($this instanceof ProductHasModelsInterface && $this->getModels()->count()==1) {
+            if ($this instanceof ProductHasModelsInterface && 1 == $this->getModels()->count()) {
                 $this->setDefaultModel($model);
             }
         }
     }
 
-    /**
-     * @param ModelInterface $model
-     */
     public function removeModel(ModelInterface $model): void
     {
         if ($this->models->contains($model)) {
@@ -62,17 +52,11 @@ trait ProductHasModelsTrait
         }
     }
 
-    /**
-     * @return ModelInterface|null
-     */
     public function getDefaultModel(): ?ModelInterface
     {
         return $this->defaultModel;
     }
 
-    /**
-     * @param ModelInterface|null $defaultModel
-     */
     public function setDefaultModel(?ModelInterface $defaultModel): void
     {
         $this->defaultModel = $defaultModel;

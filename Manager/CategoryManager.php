@@ -17,7 +17,6 @@ class CategoryManager implements CategoryManagerInterface
 
     /**
      * CategoryManager constructor.
-     * @param EntityManagerInterface $em
      */
     public function __construct(EntityManagerInterface $em)
     {
@@ -25,7 +24,7 @@ class CategoryManager implements CategoryManagerInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getTargetClass(): string
     {

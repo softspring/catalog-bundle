@@ -19,7 +19,7 @@ class CatalogListFilterForm extends AbstractType implements CatalogListFilterFor
             'csrf_protection' => false,
             'method' => 'GET',
             'required' => false,
-            'attr' => ['novalidate'=>'novalidate'],
+            'attr' => ['novalidate' => 'novalidate'],
             'allow_extra_fields' => true,
             'translation_domain' => 'sfs_catalog',
             'label_format' => 'catalog.list.filter_form.%name%.label',
@@ -28,6 +28,5 @@ class CatalogListFilterForm extends AbstractType implements CatalogListFilterFor
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
     }
 }

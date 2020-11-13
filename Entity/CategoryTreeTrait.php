@@ -20,17 +20,11 @@ trait CategoryTreeTrait
      */
     protected $subcategories;
 
-    /**
-     * @return CategoryTreeInterface|null
-     */
     public function getParent(): ?CategoryTreeInterface
     {
         return $this->parent;
     }
 
-    /**
-     * @param CategoryTreeInterface|null $parent
-     */
     public function setParent(?CategoryTreeInterface $parent): void
     {
         $this->parent = $parent;
@@ -44,9 +38,6 @@ trait CategoryTreeTrait
         return $this->subcategories;
     }
 
-    /**
-     * @param CategoryTreeInterface $subcategory
-     */
     public function addSubcategory(CategoryTreeInterface $subcategory): void
     {
         if (!$this->subcategories->contains($subcategory)) {
@@ -55,9 +46,6 @@ trait CategoryTreeTrait
         }
     }
 
-    /**
-     * @param CategoryTreeInterface $subcategory
-     */
     public function removeSubcategory(CategoryTreeInterface $subcategory): void
     {
         if ($this->subcategories->contains($subcategory)) {

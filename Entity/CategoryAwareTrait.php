@@ -13,17 +13,11 @@ trait CategoryAwareTrait
      */
     protected $category;
 
-    /**
-     * @return CategoryInterface|null
-     */
     public function getCategory(): ?CategoryInterface
     {
         return $this->category;
     }
 
-    /**
-     * @param CategoryInterface|null $category
-     */
     public function setCategory(?CategoryInterface $category): void
     {
         $this->category = $category;

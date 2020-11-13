@@ -4,8 +4,8 @@ namespace Softspring\CatalogBundle\Request\ParamConverter;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
-use Softspring\CatalogBundle\Model\ModelInterface;
 use Softspring\CatalogBundle\Manager\ModelManagerInterface;
+use Softspring\CatalogBundle\Model\ModelInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class ModelParamConverter implements ParamConverterInterface
@@ -17,7 +17,6 @@ class ModelParamConverter implements ParamConverterInterface
 
     /**
      * ModelParamConverter constructor.
-     * @param ModelManagerInterface $manager
      */
     public function __construct(ModelManagerInterface $manager)
     {
@@ -33,6 +32,6 @@ class ModelParamConverter implements ParamConverterInterface
 
     public function supports(ParamConverter $configuration)
     {
-        return $configuration->getClass() === ModelInterface::class;
+        return ModelInterface::class === $configuration->getClass();
     }
 }

@@ -31,10 +31,6 @@ class CatalogExtension extends AbstractExtension
 
     /**
      * CatalogExtension constructor.
-     *
-     * @param CategoryManagerInterface|null $categoryManager
-     * @param ProductManagerInterface|null  $productManager
-     * @param PackManagerInterface|null     $packManager
      */
     public function __construct(?CategoryManagerInterface $categoryManager, ?ProductManagerInterface $productManager, ?PackManagerInterface $packManager)
     {
@@ -44,7 +40,7 @@ class CatalogExtension extends AbstractExtension
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getFunctions()
     {
@@ -60,25 +56,16 @@ class CatalogExtension extends AbstractExtension
         ];
     }
 
-    /**
-     * @return bool
-     */
     public function supportsCategories(): bool
     {
         return $this->categoryManager instanceof CategoryManagerInterface;
     }
 
-    /**
-     * @return bool
-     */
     public function supportsPacks(): bool
     {
         return $this->packManager instanceof PackManagerInterface;
     }
 
-    /**
-     * @return bool
-     */
     public function supportsSubcategories(): bool
     {
         if (!$this->supportsCategories()) {
@@ -88,9 +75,6 @@ class CatalogExtension extends AbstractExtension
         return $this->categoryManager->createEntity() instanceof CategoryTreeInterface;
     }
 
-    /**
-     * @return bool
-     */
     public function productHasCategory(): bool
     {
         if (!$this->supportsCategories()) {
@@ -112,11 +96,6 @@ class CatalogExtension extends AbstractExtension
         return $this->categoryManager->getRepository()->findBy([]);
     }
 
-    /**
-     * @param array $criteria
-     *
-     * @return ProductInterface|null
-     */
     public function getProduct(array $criteria): ?ProductInterface
     {
         /** @var ProductInterface|null $product */

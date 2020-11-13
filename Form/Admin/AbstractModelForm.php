@@ -19,8 +19,6 @@ abstract class AbstractModelForm extends AbstractType
 
     /**
      * AbstractModelForm constructor.
-     *
-     * @param ModelManagerInterface $modelManager
      */
     public function __construct(ModelManagerInterface $modelManager)
     {
@@ -28,7 +26,7 @@ abstract class AbstractModelForm extends AbstractType
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -39,7 +37,7 @@ abstract class AbstractModelForm extends AbstractType
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

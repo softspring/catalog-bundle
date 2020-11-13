@@ -31,24 +31,18 @@ abstract class Model implements ModelInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function isDefault(): bool
     {
         return $this->getProduct() && $this->getProduct()->getDefaultModel() === $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSku(): ?string
     {
         return $this->sku;
     }
 
-    /**
-     * @param string|null $sku
-     */
     public function setSku(?string $sku): void
     {
         $this->sku = $sku;

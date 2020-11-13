@@ -15,9 +15,6 @@ class ProductEvent extends RequestEvent
 
     /**
      * ProductEvent constructor.
-     *
-     * @param ProductInterface $product
-     * @param Request|null     $request
      */
     public function __construct(ProductInterface $product, ?Request $request)
     {
@@ -25,9 +22,6 @@ class ProductEvent extends RequestEvent
         $this->product = $product;
     }
 
-    /**
-     * @return ProductInterface
-     */
     public function getProduct(): ProductInterface
     {
         return $this->product;

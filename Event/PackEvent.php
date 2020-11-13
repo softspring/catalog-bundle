@@ -15,9 +15,6 @@ class PackEvent extends RequestEvent
 
     /**
      * PackEvent constructor.
-     *
-     * @param PackInterface $pack
-     * @param Request|null     $request
      */
     public function __construct(PackInterface $pack, ?Request $request)
     {
@@ -25,9 +22,6 @@ class PackEvent extends RequestEvent
         $this->pack = $pack;
     }
 
-    /**
-     * @return PackInterface
-     */
     public function getPack(): PackInterface
     {
         return $this->pack;

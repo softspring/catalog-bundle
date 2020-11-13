@@ -5,7 +5,7 @@ namespace Softspring\CatalogBundle\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Class Product
+ * Class Product.
  */
 abstract class Product implements ProductInterface
 {

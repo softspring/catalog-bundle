@@ -20,6 +20,5 @@ class ProductDeleteForm extends AbstractType implements ProductDeleteFormInterfa
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
     }
 }

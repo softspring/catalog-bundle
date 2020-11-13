@@ -18,8 +18,6 @@ abstract class AbstractProductForm extends AbstractType
 
     /**
      * AbstractModelForm constructor.
-     *
-     * @param ProductManagerInterface $productManager
      */
     public function __construct(ProductManagerInterface $productManager)
     {
@@ -27,7 +25,7 @@ abstract class AbstractProductForm extends AbstractType
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -38,7 +36,7 @@ abstract class AbstractProductForm extends AbstractType
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

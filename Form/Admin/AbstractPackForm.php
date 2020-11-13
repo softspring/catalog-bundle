@@ -18,8 +18,6 @@ abstract class AbstractPackForm extends AbstractType
 
     /**
      * AbstractModelForm constructor.
-     *
-     * @param PackManagerInterface $packManager
      */
     public function __construct(PackManagerInterface $packManager)
     {
@@ -27,7 +25,7 @@ abstract class AbstractPackForm extends AbstractType
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -38,7 +36,7 @@ abstract class AbstractPackForm extends AbstractType
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

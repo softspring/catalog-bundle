@@ -20,6 +20,5 @@ class ModelDeleteForm extends AbstractType implements ModelDeleteFormInterface
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
     }
 }

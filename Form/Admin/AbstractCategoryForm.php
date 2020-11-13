@@ -18,8 +18,6 @@ abstract class AbstractCategoryForm extends AbstractType
 
     /**
      * AbstractModelForm constructor.
-     *
-     * @param CategoryManagerInterface $categoryManager
      */
     public function __construct(CategoryManagerInterface $categoryManager)
     {

@@ -15,9 +15,6 @@ class ModelEvent extends RequestEvent
 
     /**
      * ModelEvent constructor.
-     *
-     * @param ModelInterface $model
-     * @param Request|null   $request
      */
     public function __construct(ModelInterface $model, ?Request $request)
     {
@@ -25,9 +22,6 @@ class ModelEvent extends RequestEvent
         $this->model = $model;
     }
 
-    /**
-     * @return ModelInterface
-     */
     public function getModel(): ModelInterface
     {
         return $this->model;
