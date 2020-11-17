@@ -8,31 +8,32 @@ use Doctrine\Common\Collections\Collection;
 abstract class Pack implements PackInterface
 {
     /**
-     * @var Collection|ProductInterface[]
+     * @var Collection|PackProductInterface[]
      */
-    protected $products;
+    protected $packProducts;
 
     public function __construct()
     {
-        $this->products = new ArrayCollection();
+        $this->packProducts = new ArrayCollection();
     }
 
-    public function getProducts(): Collection
+    public function getPackProducts(): Collection
     {
-        return $this->products;
+        return $this->packProducts;
     }
 
-    public function addProduct(ProductInterface $product): void
+    public function addPackProduct(PackProductInterface $packProduct): void
     {
-        if (!$this->getProducts()->contains($product)) {
-            $this->getProducts()->add($product);
+        if (!$this->getPackProducts()->contains($packProduct)) {
+            $this->getPackProducts()->add($packProduct);
+            $packProduct->setPack($this);
         }
     }
 
-    public function removeProduct(ProductInterface $product): void
+    public function removePackProduct(PackProductInterface $packProduct): void
     {
-        if ($this->getProducts()->contains($product)) {
-            $this->getProducts()->removeElement($product);
+        if ($this->getPackProducts()->contains($packProduct)) {
+            $this->getPackProducts()->removeElement($packProduct);
         }
     }
 }

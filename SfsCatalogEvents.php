@@ -260,6 +260,92 @@ class SfsCatalogEvents
     const ADMIN_MODELS_DELETE_VIEW = 'sfs_catalog.admin.models.delete_view';
 
     /**
+     * @Event("Softspring\CoreBundle\Event\ViewEvent")
+     */
+    const ADMIN_PACKS_LIST_VIEW = 'sfs_catalog.admin.packs.list_view';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_PACKS_CREATE_INITIALIZE = 'sfs_catalog.admin.packs.create_initialize';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_PACKS_CREATE_FORM_VALID = 'sfs_catalog.admin.packs.create_form_valid';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_PACKS_CREATE_SUCCESS = 'sfs_catalog.admin.packs.create_success';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_PACKS_CREATE_FORM_INVALID = 'sfs_catalog.admin.packs.create_form_invalid';
+
+    /**
+     * @Event("Softspring\CoreBundle\Event\ViewEvent")
+     */
+    const ADMIN_PACKS_CREATE_VIEW = 'sfs_catalog.admin.packs.create_view';
+
+    /**
+     * @Event("Softspring\CoreBundle\Event\ViewEvent")
+     */
+    const ADMIN_PACKS_READ_VIEW = 'sfs_catalog.admin.packs.read_view';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_PACKS_UPDATE_INITIALIZE = 'sfs_catalog.admin.packs.update_initialize';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_PACKS_UPDATE_FORM_VALID = 'sfs_catalog.admin.packs.update_form_valid';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_PACKS_UPDATE_SUCCESS = 'sfs_catalog.admin.packs.update_success';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_PACKS_UPDATE_FORM_INVALID = 'sfs_catalog.admin.packs.update_form_invalid';
+
+    /**
+     * @Event("Softspring\CoreBundle\Event\ViewEvent")
+     */
+    const ADMIN_PACKS_UPDATE_VIEW = 'sfs_catalog.admin.packs.update_view';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_PACKS_DELETE_INITIALIZE = 'sfs_catalog.admin.packs.delete_initialize';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_PACKS_DELETE_FORM_VALID = 'sfs_catalog.admin.packs.delete_form_valid';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseEntityEvent")
+     */
+    const ADMIN_PACKS_DELETE_SUCCESS = 'sfs_catalog.admin.packs.delete_success';
+
+    /**
+     * @Event("Softspring\CrudlBundle\Event\GetResponseFormEvent")
+     */
+    const ADMIN_PACKS_DELETE_FORM_INVALID = 'sfs_catalog.admin.packs.delete_form_invalid';
+
+    /**
+     * @Event("Softspring\CoreBundle\Event\ViewEvent")
+     */
+    const ADMIN_PACKS_DELETE_VIEW = 'sfs_catalog.admin.packs.delete_view';
+    
+    
+    /**
      * @Event(Softspring\CoreBundle\Event\GetResponseRequestEvent")
      */
     const CATALOG_LIST_INITIALIZE = 'sfs_catalog.catalog.list_initialize';

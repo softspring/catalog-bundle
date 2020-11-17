@@ -2,13 +2,19 @@
 {% extends '@SfsCatalog/admin_layout.html.twig' %}
 {% block title %}{{ 'admin_packs.update.page_title'|trans }}{% endblock %}
 
+{% block breadcrums_content %}
+    {{ parent() }}
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_list') }}">Packs</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_read', {'pack':pack}) }}">{{ pack.name }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Update</li>
+{% endblock breadcrums_content %}
+
 {% block content %}
     <div class="d-flex align-items-center justify-content-between mb-4">
         <h1 class="h3">Update pack</h1>
     </div>
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_rest(form) }}
+        {% include '@SfsCatalog/admin/pack/_form.html.twig' %}
         <div class="d-flex justify-content-end align-items-center">
             <a href="{{ url('sfs_catalog_admin_packs_list') }}" class="btn btn-outline-secondary ml-3">{{ 'admin_packs.update.actions.cancel.button'|trans }}</a>
             <a href="{{ url('sfs_catalog_admin_packs_delete', {'pack':pack}) }}" class="btn btn-danger ml-3">{{ 'admin_packs.update.actions.delete.button'|trans }}</a>

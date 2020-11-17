@@ -69,6 +69,10 @@ admin_packs:
             en.label: "English"
             es.label: "Spanish"
             slug.label: "Slug"
+            packProducts:
+                label: "Products"
+                product.label: "Product"
+                quantity.label: "Quantity"
         actions:
             create.button: "Create"
             cancel.button: "Cancel"
@@ -81,6 +85,10 @@ admin_packs:
             en.label: "English"
             es.label: "Spanish"
             slug.label: "Slug"
+            packProducts:
+                label: "Products"
+                product.label: "Product"
+                quantity.label: "Quantity"
         actions:
             update.button: "Update"
             cancel.button: "Cancel"

@@ -51,6 +51,7 @@ class CatalogExtension extends AbstractExtension
             new TwigFunction('sfs_catalog_supports_subcategories', [$this, 'supportsSubcategories']),
             new TwigFunction('sfs_catalog_supports_packs', [$this, 'supportsPacks']),
             new TwigFunction('sfs_catalog_product_has_categories', [$this, 'productHasCategory']),
+            new TwigFunction('sfs_catalog_pack_has_categories', [$this, 'packHasCategory']),
             new TwigFunction('sfs_catalog_categories', [$this, 'getCategories']),
             new TwigFunction('sfs_catalog_product', [$this, 'getProduct']),
         ];
@@ -82,6 +83,12 @@ class CatalogExtension extends AbstractExtension
         }
 
         return $this->productManager->createEntity() instanceof ProductHasCategoryInterface;
+    }
+
+    public function packHasCategory(): bool
+    {
+        // NOT YET IMPLEMENTED
+        return false;
     }
 
     /**

@@ -6,7 +6,7 @@
             <a href="{{ url('sfs_catalog_admin_categories_read', {'category':category}) }}">{{ category.translatedName|translate }}</a>
         </td>
 
-        {% if sfs_catalog_has_subcategories() %}
+        {% if sfs_catalog_supports_subcategories() %}
             <td>
                 {{ category.parent.translatedName|translate|default('') }}
             </td>

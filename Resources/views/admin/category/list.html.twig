@@ -17,7 +17,7 @@
         <thead>
             <tr>
                 <th scope="col">{{ 'admin_categories.list.fields.name.header'|trans }}</th>
-                {% if sfs_catalog_has_subcategories() %}
+                {% if sfs_catalog_supports_subcategories() %}
                     <th scope="col">{{ 'admin_categories.list.fields.parent.header'|trans }}</th>
                 {% endif %}
                 <th scope="col">{{ 'admin_categories.list.actions.header'|trans }}</th>

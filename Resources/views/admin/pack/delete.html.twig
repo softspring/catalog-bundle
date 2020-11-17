@@ -2,6 +2,13 @@
 {% extends '@SfsCatalog/admin_layout.html.twig' %}
 {% block title %}{{ 'admin_packs.delete.page_title'|trans }}{% endblock %}
 
+{% block breadcrums_content %}
+    {{ parent() }}
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_list') }}">Packs</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_read', {'pack':pack}) }}">{{ pack.name }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Delete</li>
+{% endblock breadcrums_content %}
+
 {% block content %}
     {{ form_start(form) }}
         {{ form_widget(form) }}

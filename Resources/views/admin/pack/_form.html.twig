@@ -1,0 +1,12 @@
+{% form_theme form '@SfsCatalog/admin/pack/pack-product-form-theme.html.twig' %}
+
+{% if form.translatedName is defined %}
+    {{ form_row(form.translatedName) }}
+{% else %}
+    {{ form_row(form.name) }}
+{% endif %}
+
+{{ form_row(form.packProducts) }}
+
+{{ form_widget(form) }}
+{{ form_rest(form) }}

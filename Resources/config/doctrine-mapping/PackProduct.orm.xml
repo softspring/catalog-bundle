@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                      https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="Softspring\CatalogBundle\Model\PackProduct" table="catalog_pack_product">
+        <many-to-one field="pack" target-entity="Softspring\CatalogBundle\Model\PackInterface">
+            <join-column name="pack_id" referenced-column-name="id" on-delete="CASCADE" />
+        </many-to-one>
+
+        <many-to-one field="product" target-entity="Softspring\CatalogBundle\Model\ProductInterface">
+            <join-column name="product_id" referenced-column-name="id" on-delete="CASCADE" />
+        </many-to-one>
+
+        <field name="quantity" column="quantity" type="integer" nullable="false">
+            <options>
+                <option name="unsigned">true</option>
+            </options>
+        </field>
+    </mapped-superclass>
+
+</doctrine-mapping>

@@ -1,1 +1,6 @@
 {% extends ['@SfsAdmin/layout.html.twig', 'admin/layout.html.twig', 'base.html.twig'] %}
+
+{% block breadcrums_content %}
+    {{ parent() }}
+    <li class="breadcrumb-item"><a href="#">Catalog</a></li>
+{% endblock breadcrums_content %}

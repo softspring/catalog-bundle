@@ -1,7 +1,7 @@
 {% extends '@SfsCatalog/layout.html.twig' %}
 
 {% block content %}
-    {% if sfs_catalog_has_categories() %}
+    {% if sfs_catalog_supports_categories() %}
         <div class="row">
             <div class="col-2">
                 {% for category in sfs_catalog_categories() %}
@@ -19,7 +19,7 @@
         {% endfor %}
         </div>
 
-    {% if sfs_catalog_has_categories() %}
+    {% if sfs_catalog_supports_categories() %}
             </div>
         </div>
     {% endif %}

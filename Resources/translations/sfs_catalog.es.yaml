@@ -1,0 +1,186 @@
+admin_products:
+    list:
+        page_title: "Productos"
+        fields.name.header: "Producto"
+        fields.category.header: "Categoría"
+        actions.header: "Acciones"
+        actions:
+            update.button: "Guardar"
+            delete.button: "Eliminar"
+            delete.title: "¿Estás segur@?"
+
+    read:
+        page_title: "Detalles del producto"
+        title: "Detalles del producto"
+
+    create:
+        page_title: "Nuevo producto"
+        title: "Crear producto"
+        form:
+            name.label: "Nombre"
+            translatedName.label: "Nombre traducido"
+            en.label: "Inglés"
+            es.label: "Castellano"
+            slug.label: "Slug"
+        actions:
+            create.button: "Crear"
+            cancel.button: "Cancelar"
+
+    update:
+        page_title: "Editar producto"
+        form:
+            name.label: "Producto"
+            translatedName.label: "Nombre traducido"
+            en.label: "Inglés"
+            es.label: "Castellano"
+            slug.label: "Slug"
+        actions:
+            update.button: "Guardar"
+            cancel.button: "Cancelar"
+            delete.button: "Eliminar"
+
+    delete:
+        page_title: "Eliminar producto"
+        actions:
+            delete.button: "Eliminar"
+            cancel.button: "Cancelar"
+            
+admin_packs:
+    list:
+        page_title: "Packs"
+        fields.name.header: "Pack"
+        fields.category.header: "Categoría"
+        actions.header: "Acciones"
+        actions:
+            update.button: "Guardar"
+            delete.button: "Eliminar"
+            delete.title: "¿Estás segur@?"
+    read:
+        page_title: "Detalles del pack"
+        title: "Detalles del pack"
+
+    create:
+        page_title: "Nuevo pack"
+        title: "Crear pack"
+        form:
+            name.label: "Pack"
+            translatedName.label: "Nombre traducido"
+            en.label: "Inglés"
+            es.label: "Castellano"
+            slug.label: "Slug"
+            packProducts:
+                label: "Productos"
+                product.label: "Producto"
+                quantity.label: "Cantidad"
+        actions:
+            create.button: "Crear"
+            cancel.button: "Cancelar"
+
+    update:
+        page_title: "Editar pack"
+        form:
+            name.label: "Pack"
+            translatedName.label: "Nombre traducido"
+            en.label: "Inglés"
+            es.label: "Castellano"
+            slug.label: "Slug"
+            packProducts:
+                label: "Productos"
+                product.label: "Producto"
+                quantity.label: "Cantidad"
+        actions:
+            update.button: "Guardar"
+            cancel.button: "Cancelar"
+            delete.button: "Eliminar"
+
+    delete:
+        page_title: "Eliminar pack"
+        actions:
+            delete.button: "Eliminar"
+            cancel.button: "Cancelar"
+
+admin_models:
+    list:
+        page_title: "Modelos"
+        fields.product.header: "Producto"
+        fields.name.header: "Modelo"
+        fields.sku.header: "SKU"
+        fields.price.header: "Precio"
+        actions.header: "Acciones"
+        actions:
+            update.button: "Guardar"
+            delete.button: "Eliminar"
+
+    create:
+        page_title: "Nuevo modelo"
+        form:
+            product.label: "Producto"
+            name.label: "Modelo"
+            sku.label: "SKU"
+            translatedName.label: "Nombre traducido"
+            en.label: "Inglés"
+            es.label: "Castellano"
+            slug.label: "Slug"
+            price.label: "Precio"
+            currency.label: "Moneda"
+        actions:
+            create.button: "Crear"
+            cancel.button: "Cancelar"
+
+    update:
+        page_title: "Editar producto"
+        form:
+            product.label: "Producto"
+            name.label: "Modelo"
+            sku.label: "SKU"
+            translatedName.label: "Nombre traducido"
+            en.label: "Inglés"
+            es.label: "Castellano"
+            slug.label: "Slug"
+            price.label: "Precio"
+            currency.label: "Moneda"
+        actions:
+            update.button: "Guardar"
+            cancel.button: "Cancelar"
+            delete.button: "Eliminar"
+
+    delete:
+        page_title: "Eliminar producto"
+        actions:
+            delete.button: "Eliminar"
+            cancel.button: "Cancelar"
+
+admin_categories:
+    list:
+        page_title: "Categorías"
+        fields.name.header: "Categoría"
+        fields.parent.header: "Padre"
+        actions.header: "Acciones"
+
+    create:
+        page_title: "Nueva categoría"
+        form:
+            name.label: "Categoría"
+        actions:
+            create.button: "Crear"
+            cancel.button: "Cancelar"
+
+    update:
+        page_title: "Editar categoría"
+        form:
+            name.label: "Modelo"
+        actions:
+            update.button: "Guardar"
+            cancel.button: "Cancelar"
+            delete.button: "Eliminar"
+
+    delete:
+        page_title: "Eliminar categoría"
+        actions:
+            delete.button: "Eliminar"
+            cancel.button: "Cancelar"
+model:
+    add_to_cart: "Añadir al carro"
+
+product:
+    add_to_cart: "Añadir al carro"

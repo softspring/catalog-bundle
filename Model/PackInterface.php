@@ -11,11 +11,11 @@ interface PackInterface
     public function setName(?string $name): void;
 
     /**
-     * @return Collection|ProductInterface[]
+     * @return Collection|PackProductInterface[]
      */
-    public function getProducts(): Collection;
+    public function getPackProducts(): Collection;
 
-    public function addProduct(ProductInterface $product): void;
+    public function removePackProduct(PackProductInterface $packProduct): void;
 
-    public function removeProduct(ProductInterface $product): void;
+    public function addPackProduct(PackProductInterface $packProduct): void;
 }
