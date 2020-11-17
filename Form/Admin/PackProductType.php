@@ -2,15 +2,12 @@
 
 namespace Softspring\CatalogBundle\Form\Admin;
 
-use App\Entity\CatalogPackProduct;
 use Doctrine\ORM\EntityManagerInterface;
 use Softspring\CatalogBundle\Manager\PackProductManagerInterface;
-use Softspring\CatalogBundle\Manager\ProductManagerInterface;
 use Softspring\CatalogBundle\Model\PackProductInterface;
 use Softspring\CatalogBundle\Model\ProductInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -61,18 +58,5 @@ class PackProductType extends AbstractType
         ]);
 
         $builder->add('quantity');
-//
-//        $builder
-//            ->addModelTransformer(new CallbackTransformer(
-//                function ($tagsAsArray) {
-//                    // transform the array to a string
-//                    return $tagsAsArray;
-//                },
-//                function ($tagsAsString) {
-//                    // transform the string back to an array
-//                    return $tagsAsString ?? new CatalogPackProduct();
-//                }
-//            ))
-//        ;
     }
 }

@@ -24,7 +24,7 @@ class PackManager extends DefaultCrudlEntityManager implements PackManagerInterf
         $class = $this->getEntityClass();
 
         /** @var PackInterface $pack */
-        $pack = new $class;
+        $pack = new $class();
         $pack->addPackProduct($this->packProductManager->createEntity());
 
         return $pack;

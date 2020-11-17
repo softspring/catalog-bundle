@@ -343,8 +343,7 @@ class SfsCatalogEvents
      * @Event("Softspring\CoreBundle\Event\ViewEvent")
      */
     const ADMIN_PACKS_DELETE_VIEW = 'sfs_catalog.admin.packs.delete_view';
-    
-    
+
     /**
      * @Event(Softspring\CoreBundle\Event\GetResponseRequestEvent")
      */

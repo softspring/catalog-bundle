@@ -7,10 +7,8 @@ use Softspring\CatalogBundle\Manager\PackManagerInterface;
 use Softspring\CatalogBundle\Model\PackInterface;
 use Softspring\DoctrineSimpleTranslationTypeBundle\Form\SimpleTranslationType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Count;
 
 abstract class AbstractPackForm extends AbstractType
 {
@@ -26,9 +24,6 @@ abstract class AbstractPackForm extends AbstractType
 
     /**
      * AbstractPackForm constructor.
-     *
-     * @param PackManagerInterface   $packManager
-     * @param EntityManagerInterface $em
      */
     public function __construct(PackManagerInterface $packManager, EntityManagerInterface $em)
     {

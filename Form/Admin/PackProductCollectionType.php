@@ -3,7 +3,6 @@
 namespace Softspring\CatalogBundle\Form\Admin;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -24,7 +23,7 @@ class PackProductCollectionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'entry_type'   => PackProductType::class,
+            'entry_type' => PackProductType::class,
             'required' => false,
             'constraints' => new Count(['min' => 1]),
             'allow_add' => true,
@@ -45,8 +44,5 @@ class PackProductCollectionType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
     }
-
-
 }
