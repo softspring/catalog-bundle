@@ -5,7 +5,7 @@ admin_products:
         fields.category.header: "Categoría"
         actions.header: "Acciones"
         actions:
-            update.button: "Guardar"
+            update.button: "Editar"
             delete.button: "Eliminar"
             delete.title: "¿Estás segur@?"
 
@@ -52,7 +52,7 @@ admin_packs:
         fields.category.header: "Categoría"
         actions.header: "Acciones"
         actions:
-            update.button: "Guardar"
+            update.button: "Editar"
             delete.button: "Eliminar"
             delete.title: "¿Estás segur@?"
     read:
@@ -108,7 +108,7 @@ admin_models:
         fields.price.header: "Precio"
         actions.header: "Acciones"
         actions:
-            update.button: "Guardar"
+            update.button: "Editar"
             delete.button: "Eliminar"
 
     create:
