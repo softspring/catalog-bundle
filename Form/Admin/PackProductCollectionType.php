@@ -28,17 +28,7 @@ class PackProductCollectionType extends AbstractType
             'constraints' => new Count(['min' => 1]),
             'allow_add' => true,
             'allow_delete' => true,
-
-//            'class' => ProductInterface::class,
-//            'em' => $this->em,
-//            'query_builder' => function (EntityRepository $entityRepository) {
-//                $qb = $entityRepository->createQueryBuilder('p');
-//                return $qb;
-//            },
-//            'choice_label' => function (ProductInterface $product) {
-//                return $product->getName();
-//            },
-//            'by_reference' => false,
+            'by_reference' => false,
         ]);
     }
 

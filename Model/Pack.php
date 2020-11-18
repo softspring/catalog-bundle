@@ -34,6 +34,7 @@ abstract class Pack implements PackInterface
     {
         if ($this->getPackProducts()->contains($packProduct)) {
             $this->getPackProducts()->removeElement($packProduct);
+            $packProduct->setPack(null);
         }
     }
 }
