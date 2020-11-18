@@ -10,4 +10,21 @@
 
 {% block content %}
     <h1>{{ pack.translatedName|translate }}</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for packProduct in pack.packProducts %}
+            <tr>
+                <td>{{ packProduct.product.name|default('') }}</td>
+                <td>{{ packProduct.quantity }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
