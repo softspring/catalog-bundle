@@ -2,6 +2,14 @@
 {% extends '@SfsCatalog/admin_layout.html.twig' %}
 {% block title %}{{ 'admin_products.read.page_title'|trans }}{% endblock %}
 
+{% block breadcrums_content %}
+    {{ parent() }}
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_products_list') }}">{{ 'admin_products.list.breadcrumb'|trans }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ 'admin_products.read.breadcrumb'|trans({'%name%':product.name}) }}</li>
+{% endblock breadcrums_content %}
+
 {% block content %}
-    <h1>{{ product.translatedName|translate }}</h1>
+    {% block content_header %}
+        <h1>{{ product.translatedName|translate }}</h1>
+    {% endblock content_header %}
 {% endblock content %}

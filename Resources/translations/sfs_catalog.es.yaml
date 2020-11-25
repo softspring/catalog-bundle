@@ -1,10 +1,14 @@
 admin_products:
     list:
         page_title: "Productos"
-        fields.name.header: "Producto"
-        fields.category.header: "Categoría"
-        actions.header: "Acciones"
+        title: "Productos"
+        breadcrumb: "Productos"
+        fields:
+            name.header: "Producto"
+            category.header: "Categoría"
         actions:
+            header: "Acciones"
+            create.button: "Nuevo producto"
             update.button: "Editar"
             delete.button: "Eliminar"
             delete.title: "¿Estás segur@?"
@@ -12,13 +16,15 @@ admin_products:
     read:
         page_title: "Detalles del producto"
         title: "Detalles del producto"
+        breadcrumb: "%name%"
 
     create:
         page_title: "Nuevo producto"
         title: "Crear producto"
+        breadcrumb: "Nuevo"
         form:
             name.label: "Nombre"
-            translatedName.label: "Nombre traducido"
+            translatedName.label: "Nombre"
             en.label: "Inglés"
             es.label: "Castellano"
             slug.label: "Slug"
@@ -28,9 +34,11 @@ admin_products:
 
     update:
         page_title: "Editar producto"
+        title: "Editar producto"
+        breadcrumb: "Editar"
         form:
             name.label: "Producto"
-            translatedName.label: "Nombre traducido"
+            translatedName.label: "Nombre"
             en.label: "Inglés"
             es.label: "Castellano"
             slug.label: "Slug"
@@ -41,6 +49,8 @@ admin_products:
 
     delete:
         page_title: "Eliminar producto"
+        title: "Eliminar producto"
+        breadcrumb: "Eliminar"
         actions:
             delete.button: "Eliminar"
             cancel.button: "Cancelar"
@@ -48,23 +58,33 @@ admin_products:
 admin_packs:
     list:
         page_title: "Packs"
-        fields.name.header: "Pack"
-        fields.category.header: "Categoría"
-        actions.header: "Acciones"
+        title: "Packs"
+        breadcrumb: "Packs"
+        fields:
+            name.header: "Pack"
+            category.header: "Categoría"
         actions:
+            header: "Acciones"
+            create.button: "Nuevo pack"
             update.button: "Editar"
             delete.button: "Eliminar"
             delete.title: "¿Estás segur@?"
+
     read:
         page_title: "Detalles del pack"
         title: "Detalles del pack"
+        breadcrumb: "%name%"
+        table:
+            product.header: "Producto"
+            quantity.header: "Cantidad"
 
     create:
         page_title: "Nuevo pack"
         title: "Crear pack"
+        breadcrumb: "Nuevo"
         form:
             name.label: "Pack"
-            translatedName.label: "Nombre traducido"
+            translatedName.label: "Nombre"
             en.label: "Inglés"
             es.label: "Castellano"
             slug.label: "Slug"
@@ -78,9 +98,11 @@ admin_packs:
 
     update:
         page_title: "Editar pack"
+        title: "Editar pack"
+        breadcrumb: "Editar"
         form:
             name.label: "Pack"
-            translatedName.label: "Nombre traducido"
+            translatedName.label: "Nombre"
             en.label: "Inglés"
             es.label: "Castellano"
             slug.label: "Slug"
@@ -95,6 +117,8 @@ admin_packs:
 
     delete:
         page_title: "Eliminar pack"
+        title: "Eliminar pack"
+        breadcrumb: "Eliminar"
         actions:
             delete.button: "Eliminar"
             cancel.button: "Cancelar"
@@ -102,22 +126,32 @@ admin_packs:
 admin_models:
     list:
         page_title: "Modelos"
-        fields.product.header: "Producto"
-        fields.name.header: "Modelo"
-        fields.sku.header: "SKU"
-        fields.price.header: "Precio"
-        actions.header: "Acciones"
+        title: "Modelos"
+        breadcrumb: "Modelos"
+        fields:
+            product.header: "Producto"
+            name.header: "Modelo"
+            sku.header: "SKU"
+            price.header: "Precio"
         actions:
+            header: "Acciones"
             update.button: "Editar"
             delete.button: "Eliminar"
 
+    read:
+        page_title: "Detalles del modelo"
+        title: "Detalles del modelo"
+        breadcrumb: "%name%"
+
     create:
         page_title: "Nuevo modelo"
+        title: "Nuevo modelo"
+        breadcrumb: "Nuevo"
         form:
             product.label: "Producto"
             name.label: "Modelo"
             sku.label: "SKU"
-            translatedName.label: "Nombre traducido"
+            translatedName.label: "Nombre"
             en.label: "Inglés"
             es.label: "Castellano"
             slug.label: "Slug"
@@ -129,11 +163,13 @@ admin_models:
 
     update:
         page_title: "Editar producto"
+        title: "Editar producto"
+        breadcrumb: "Editar"
         form:
             product.label: "Producto"
             name.label: "Modelo"
             sku.label: "SKU"
-            translatedName.label: "Nombre traducido"
+            translatedName.label: "Nombre"
             en.label: "Inglés"
             es.label: "Castellano"
             slug.label: "Slug"
@@ -146,6 +182,8 @@ admin_models:
 
     delete:
         page_title: "Eliminar producto"
+        title: "Eliminar producto"
+        breadcrumb: "Eliminar"
         actions:
             delete.button: "Eliminar"
             cancel.button: "Cancelar"
@@ -153,12 +191,24 @@ admin_models:
 admin_categories:
     list:
         page_title: "Categorías"
-        fields.name.header: "Categoría"
-        fields.parent.header: "Padre"
-        actions.header: "Acciones"
+        title: "Categorías"
+        breadcrumb: "Categorías"
+        fields:
+            name.header: "Categoría"
+            parent.header: "Padre"
+        actions:
+            header: "Acciones"
+            create.button: "Nueva categoría"
+
+    read:
+        page_title: "Detalles de la categoría"
+        title: "Detalles de la categoría"
+        breadcrumb: "%name%"
 
     create:
         page_title: "Nueva categoría"
+        title: "Nueva categoría"
+        breadcrumb: "Nueva categoría"
         form:
             name.label: "Categoría"
         actions:
@@ -167,6 +217,8 @@ admin_categories:
 
     update:
         page_title: "Editar categoría"
+        title: "Editar categoría"
+        breadcrumb: "Editar"
         form:
             name.label: "Modelo"
         actions:
@@ -176,6 +228,8 @@ admin_categories:
 
     delete:
         page_title: "Eliminar categoría"
+        title: "Eliminar categoría"
+        breadcrumb: "Eliminar%"
         actions:
             delete.button: "Eliminar"
             cancel.button: "Cancelar"

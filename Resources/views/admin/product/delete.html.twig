@@ -2,11 +2,26 @@
 {% extends '@SfsCatalog/admin_layout.html.twig' %}
 {% block title %}{{ 'admin_products.delete.page_title'|trans }}{% endblock %}
 
+{% block breadcrums_content %}
+    {{ parent() }}
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_products_list') }}">{{ 'admin_products.list.breadcrumb'|trans }}</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_products_read', {'product':product}) }}">{{ 'admin_products.read.breadcrumb'|trans({'%name%':product.name}) }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ 'admin_products.delete.breadcrumb'|trans }}</li>
+{% endblock breadcrums_content %}
+
 {% block content %}
-    {{ form_start(form) }}
+    {% block content_header %}
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3">{{ 'admin_products.delete.title'|trans }}</h1>
+        </div>
+    {% endblock content_header %}
+
+    {% block form %}
+        {{ form_start(form) }}
         {{ form_widget(form) }}
         {{ form_rest(form) }}
         <input type="submit" value="{{ 'admin_products.delete.actions.delete.button'|trans }}" class="btn btn-danger btn-block" />
         <a href="{{ url('sfs_catalog_admin_products_list') }}" class="btn btn-secondary btn-block">{{ 'admin_products.delete.actions.cancel.button'|trans }}</a>
-    {{ form_end(form) }}
+        {{ form_end(form) }}
+    {% endblock form %}
 {% endblock content %}

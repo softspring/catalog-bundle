@@ -2,17 +2,28 @@
 {% extends '@SfsCatalog/admin_layout.html.twig' %}
 {% block title %}{{ 'admin_categories.update.page_title'|trans }}{% endblock %}
 
+{% block breadcrums_content %}
+    {{ parent() }}
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_categories_list') }}">{{ 'admin_categories.list.breadcrumb'|trans }}</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_categories_read', {'category':category}) }}">{{ 'admin_categories.read.breadcrumb'|trans({'%name%':category.name}) }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ 'admin_categories.update.breadcrumb'|trans }}</li>
+{% endblock breadcrums_content %}
+
 {% block content %}
-    <div class="d-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3">Update category</h1>
-    </div>
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_rest(form) }}
-        <div class="d-flex justify-content-between align-items-center">
-            <a href="{{ url('sfs_catalog_admin_categories_list') }}" class="btn btn-outline-secondary">{{ 'admin_categories.update.actions.cancel.button'|trans }}</a>
-            <a href="{{ url('sfs_catalog_admin_categories_delete', {'category':category}) }}" class="btn btn-danger">{{ 'admin_categories.update.actions.delete.button'|trans }}</a>
-            <input type="submit" value="{{ 'admin_categories.update.actions.update.button'|trans }}" class="btn btn-primary" />
+    {% block content_header %}
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3">{{ 'admin_categories.update.title'|trans }}</h1>
         </div>
-    {{ form_end(form) }}
+    {% endblock content_header %}
+
+    {% block form %}
+        {{ form_start(form) }}
+        {% include '@SfsCatalog/admin/category/_form.html.twig' %}
+        <div class="d-flex justify-content-end align-items-center">
+            <a href="{{ url('sfs_catalog_admin_categories_list') }}" class="btn btn-outline-secondary ml-3">{{ 'admin_categories.update.actions.cancel.button'|trans }}</a>
+            <a href="{{ url('sfs_catalog_admin_categories_delete', {'category':category}) }}" class="btn btn-danger ml-3">{{ 'admin_categories.update.actions.delete.button'|trans }}</a>
+            <input type="submit" value="{{ 'admin_categories.update.actions.update.button'|trans }}" class="btn btn-primary ml-3" />
+        </div>
+        {{ form_end(form) }}
+    {% endblock form %}
 {% endblock content %}

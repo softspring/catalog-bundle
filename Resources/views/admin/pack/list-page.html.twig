@@ -13,7 +13,7 @@
         {% endif %}
 
         <td align="right">
-            <a href="{{ url('sfs_catalog_admin_packs_update', {'pack':pack}) }}" class="text-nowrap">update <span class="mdi mdi-18px mdi-square-edit-outline align-middle"></span></a>
+            <a href="{{ url('sfs_catalog_admin_packs_update', {'pack':pack}) }}" class="text-nowrap">{{ 'admin_packs.list.actions.update.button'|trans }} <span class="mdi mdi-18px mdi-square-edit-outline align-middle"></span></a>
         </td>
     </tr>
 {% endfor %}

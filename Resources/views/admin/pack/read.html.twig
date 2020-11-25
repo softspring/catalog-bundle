@@ -4,27 +4,31 @@
 
 {% block breadcrums_content %}
     {{ parent() }}
-    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_list') }}">Packs</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ pack.name }}</li>
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_list') }}">{{ 'admin_packs.list.breadcrumb'|trans }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ 'admin_packs.read.breadcrumb'|trans({'%name%':pack.name}) }}</li>
 {% endblock breadcrums_content %}
 
 {% block content %}
-    <h1>{{ pack.translatedName|translate }}</h1>
+    {% block content_header %}
+        <h1>{{ pack.translatedName|translate }}</h1>
+    {% endblock content_header %}
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for packProduct in pack.packProducts %}
+    {% block pack_products %}
+        <table class="table">
+            <thead>
             <tr>
-                <td>{{ packProduct.product.name|default('') }}</td>
-                <td>{{ packProduct.quantity }}</td>
+                <th>{{ 'admin_packs.read.table.product.header'|trans }}</th>
+                <th>{{ 'admin_packs.read.table.quantity.header'|trans }}</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for packProduct in pack.packProducts %}
+                <tr>
+                    <td>{{ packProduct.product.name|default('') }}</td>
+                    <td>{{ packProduct.quantity }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endblock pack_products %}
 {% endblock content %}

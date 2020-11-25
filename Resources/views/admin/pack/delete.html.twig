@@ -4,16 +4,24 @@
 
 {% block breadcrums_content %}
     {{ parent() }}
-    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_list') }}">Packs</a></li>
-    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_read', {'pack':pack}) }}">{{ pack.name }}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Delete</li>
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_list') }}">{{ 'admin_packs.list.breadcrumb'|trans }}</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('sfs_catalog_admin_packs_read', {'pack':pack}) }}">{{ 'admin_packs.read.breadcrumb'|trans({'%name%':pack.name}) }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ 'admin_packs.delete.breadcrumb'|trans }}</li>
 {% endblock breadcrums_content %}
 
 {% block content %}
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_rest(form) }}
-        <input type="submit" value="{{ 'admin_packs.delete.actions.delete.button'|trans }}" class="btn btn-danger btn-block" />
-        <a href="{{ url('sfs_catalog_admin_packs_list') }}" class="btn btn-secondary btn-block">{{ 'admin_packs.delete.actions.cancel.button'|trans }}</a>
-    {{ form_end(form) }}
+    {% block content_header %}
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3">{{ 'admin_packs.delete.title'|trans }}</h1>
+        </div>
+    {% endblock content_header %}
+
+    {% block form %}
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_rest(form) }}
+            <input type="submit" value="{{ 'admin_packs.delete.actions.delete.button'|trans }}" class="btn btn-danger btn-block" />
+            <a href="{{ url('sfs_catalog_admin_packs_list') }}" class="btn btn-secondary btn-block">{{ 'admin_packs.delete.actions.cancel.button'|trans }}</a>
+        {{ form_end(form) }}
+    {% endblock form %}
 {% endblock content %}
