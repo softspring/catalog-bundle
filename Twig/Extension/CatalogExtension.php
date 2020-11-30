@@ -7,6 +7,7 @@ use Softspring\CatalogBundle\Manager\CategoryManagerInterface;
 use Softspring\CatalogBundle\Manager\PackManagerInterface;
 use Softspring\CatalogBundle\Manager\ProductManagerInterface;
 use Softspring\CatalogBundle\Model\CategoryTreeInterface;
+use Softspring\CatalogBundle\Model\PackInterface;
 use Softspring\CatalogBundle\Model\ProductHasCategoryInterface;
 use Softspring\CatalogBundle\Model\ProductInterface;
 use Twig\Extension\AbstractExtension;
@@ -54,6 +55,7 @@ class CatalogExtension extends AbstractExtension
             new TwigFunction('sfs_catalog_pack_has_categories', [$this, 'packHasCategory']),
             new TwigFunction('sfs_catalog_categories', [$this, 'getCategories']),
             new TwigFunction('sfs_catalog_product', [$this, 'getProduct']),
+            new TwigFunction('sfs_catalog_pack', [$this, 'getPack']),
         ];
     }
 
@@ -109,5 +111,13 @@ class CatalogExtension extends AbstractExtension
         $product = $this->productManager->getRepository()->findOneBy($criteria);
 
         return $product;
+    }
+
+    public function getPack(array $criteria): ?PackInterface
+    {
+        /** @var PackInterface|null $pack */
+        $pack = $this->packManager->getRepository()->findOneBy($criteria);
+
+        return $pack;
     }
 }
