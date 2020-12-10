@@ -1,3 +1,11 @@
+parameters:
+    sfs_catalog.admin.packs.list_view: '@@SfsCatalog/admin/pack/list.html.twig'
+    sfs_catalog.admin.packs.list_page_view: '@@SfsCatalog/admin/pack/list-page.html.twig'
+    sfs_catalog.admin.packs.create_view: '@@SfsCatalog/admin/pack/create.html.twig'
+    sfs_catalog.admin.packs.update_view: '@@SfsCatalog/admin/pack/update.html.twig'
+    sfs_catalog.admin.packs.delete_view: '@@SfsCatalog/admin/pack/delete.html.twig'
+    sfs_catalog.admin.packs.read_view: '@@SfsCatalog/admin/pack/read.html.twig'
+
 services:
     _defaults:
         autowire: true
@@ -25,8 +33,8 @@ services:
                 list:
                     is_granted: 'ROLE_CATALOG_ADMIN_PACKS_LIST'
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_LIST_VIEW
-                    view: '@@SfsCatalog/admin/pack/list.html.twig'
-                    view_page: '@@SfsCatalog/admin/pack/list-page.html.twig'
+                    view: '%sfs_catalog.admin.packs.list_view%'
+                    view_page: '%sfs_catalog.admin.packs.list_page_view%'
                 create:
                     is_granted: 'ROLE_CATALOG_ADMIN_PACKS_CREATE'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_CREATE_INITIALIZE
@@ -35,7 +43,7 @@ services:
                     form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_CREATE_FORM_INVALID
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_CREATE_VIEW
                     success_redirect_to: 'sfs_catalog_admin_packs_list'
-                    view: '@@SfsCatalog/admin/pack/create.html.twig'
+                    view: '%sfs_catalog.admin.packs.create_view%'
                 update:
                     is_granted: 'ROLE_CATALOG_ADMIN_PACKS_UPDATE'
                     param_converter_key: 'id'
@@ -45,7 +53,7 @@ services:
                     form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_UPDATE_FORM_INVALID
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_UPDATE_VIEW
                     success_redirect_to: 'sfs_catalog_admin_packs_list'
-                    view: '@@SfsCatalog/admin/pack/update.html.twig'
+                    view: '%sfs_catalog.admin.packs.update_view%'
                 delete:
                     is_granted: 'ROLE_CATALOG_ADMIN_PACKS_DELETE'
                     param_converter_key: 'id'
@@ -55,9 +63,9 @@ services:
                     form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_DELETE_FORM_INVALID
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_DELETE_VIEW
                     success_redirect_to: 'sfs_catalog_admin_packs_list'
-                    view: '@@SfsCatalog/admin/pack/delete.html.twig'
+                    view: '%sfs_catalog.admin.packs.delete_view%'
                 read:
                     is_granted: 'ROLE_CATALOG_ADMIN_PACKS_DETAILS'
                     param_converter_key: 'id'
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PACKS_READ_VIEW
-                    view: '@@SfsCatalog/admin/pack/read.html.twig'
+                    view: '%sfs_catalog.admin.packs.read_view%'
