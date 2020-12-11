@@ -31,8 +31,8 @@ services:
                 list:
                     is_granted: 'ROLE_CATALOG_ADMIN_PRODUCTS_LIST'
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_LIST_VIEW
-                    view: '@@SfsCatalog/admin/product/list.html.twig'
-                    view_page: '%sfs_catalog.admin.products.list_view%'
+                    view: '%sfs_catalog.admin.products.list_view%'
+                    view_page: '%sfs_catalog.admin.products.list_page_view%'
                 create:
                     is_granted: 'ROLE_CATALOG_ADMIN_PRODUCTS_CREATE'
                     initialize_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_INITIALIZE
@@ -41,7 +41,7 @@ services:
                     form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_FORM_INVALID
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_CREATE_VIEW
                     success_redirect_to: 'sfs_catalog_admin_products_list'
-                    view: '%sfs_catalog.admin.products.list_page_view%'
+                    view: '%sfs_catalog.admin.products.create_view%'
                 update:
                     is_granted: 'ROLE_CATALOG_ADMIN_PRODUCTS_UPDATE'
                     param_converter_key: 'id'
@@ -51,7 +51,7 @@ services:
                     form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_UPDATE_FORM_INVALID
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_UPDATE_VIEW
                     success_redirect_to: 'sfs_catalog_admin_products_list'
-                    view: '%sfs_catalog.admin.products.create_view%'
+                    view: '%sfs_catalog.admin.products.update_view%'
                 delete:
                     is_granted: 'ROLE_CATALOG_ADMIN_PRODUCTS_DELETE'
                     param_converter_key: 'id'
@@ -61,9 +61,9 @@ services:
                     form_invalid_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_DELETE_FORM_INVALID
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_DELETE_VIEW
                     success_redirect_to: 'sfs_catalog_admin_products_list'
-                    view: '%sfs_catalog.admin.products.update_view%'
+                    view: '%sfs_catalog.admin.products.delete_view%'
                 read:
                     is_granted: 'ROLE_CATALOG_ADMIN_PRODUCTS_DETAILS'
                     param_converter_key: 'id'
                     view_event_name: !php/const Softspring\CatalogBundle\SfsCatalogEvents::ADMIN_PRODUCTS_READ_VIEW
-                    view: '%sfs_catalog.admin.products.delete_view%'
+                    view: '%sfs_catalog.admin.products.read_view%'
